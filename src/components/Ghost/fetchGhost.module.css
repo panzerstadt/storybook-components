@@ -1,0 +1,54 @@
+.containerDiv {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+
+.postDiv {
+  margin: 20px 10px;
+}
+
+.postDivBorder {
+  transition: transform 300ms ease;
+  background-color: white;
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.089);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+  width: 300px;
+}
+
+.postDivBorder:hover {
+  z-index: 10;
+  transform: scale(1.05);
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.11);
+}
+
+.postDivPadding {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: calc(100% - 10px);
+}
+
+.imgDiv {
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.textDiv {
+  margin: 0 10px;
+}
+
+.text {
+  text-align: left;
+  overflow-wrap: break-word;
+  font-size: 13px;
+  font-weight: 200;
+}
