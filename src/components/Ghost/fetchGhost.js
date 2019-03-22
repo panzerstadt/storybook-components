@@ -3,21 +3,20 @@ import GhostContentAPI from "@tryghost/content-api";
 
 import styles from "./fetchGhost.module.css";
 
+import {
+  BlogNoImage,
+  BlogWithImage,
+  GalleryNoImage,
+  GalleryWithImage
+} from "./components";
+
 const api = new GhostContentAPI({
   url: "https://gatsby-starter-blog-admin.now.sh",
   key: "53321cfbcc9440e2c7554b0c91",
   version: "v2"
 });
 
-const shorten = (text, words = 30) => {
-  return text
-    .split(" ")
-    .slice(0, words)
-    .concat(["...more"])
-    .join(" ");
-};
-
-export const FetchGhost = ({ onFetched }) => {
+export const FetchGhost = ({ onFetched, theme = "blog" }) => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetchGhost().then(d => {
@@ -29,59 +28,32 @@ export const FetchGhost = ({ onFetched }) => {
     if (onFetched) onFetched(posts);
   }, [posts]);
 
-  const WithImage = ({ post }) => {
-    return (
-      <div className={styles.postDiv}>
-        <div
-          className={styles.postDivBorder}
-          style={{ width: 300, height: 400 }}
-        >
-          <div className={styles.postDivPadding}>
-            <div className={styles.imgDiv} style={{ height: 300 }}>
-              <img className={styles.img} src={post.feature_image} alt="img" />
-            </div>
-            <div className={styles.textDiv}>
-              <p className={styles.text}>{shorten(post.excerpt)}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+  const WithImage = ({ theme, ...rest }) => {
+    if (theme === "gallery") return <GalleryWithImage {...rest} />;
+    else if (theme === "blog") return <BlogWithImage {...rest} />;
+    return <GalleryWithImage {...rest} />;
   };
 
-  const NoImage = ({ post }) => {
-    return (
-      <div className={styles.postDiv}>
-        <div
-          className={styles.postDivBorder}
-          style={{ width: 300, height: 400 }}
-        >
-          <div
-            className={styles.postDivPadding}
-            style={{ justifyContent: "center" }}
-          >
-            <div className={styles.textDiv}>
-              <p
-                className={styles.text}
-                style={{ fontSize: "1.3rem", fontWeight: 200, padding: 30 }}
-              >
-                {shorten(post.excerpt)}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+  const NoImage = ({ theme, ...rest }) => {
+    if (theme === "gallery") return <GalleryNoImage {...rest} />;
+    else if (theme === "blog") return <BlogNoImage {...rest} />;
+    return <GalleryNoImage {...rest} />;
   };
 
   return (
-    <div className={styles.containerDiv}>
+    <div
+      className={styles.containerDiv}
+      style={{
+        flexDirection: theme === "blog" ? "column" : "row",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
       {posts.map(p => {
-        console.log(p);
         if (p.feature_image) {
-          return <WithImage key={p.comment_id} post={p} />;
+          return <WithImage key={p.comment_id} theme={theme} post={p} />;
         } else {
-          return <NoImage key={p.comment_id} post={p} />;
+          return <NoImage key={p.comment_id} theme={theme} post={p} />;
         }
       })}
     </div>

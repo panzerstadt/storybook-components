@@ -1,0 +1,14 @@
+.react-html5-camera-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+.react-html5-camera-photo > video {
+  height: calc(100vh * 297 * var(--multiplier));
+  width: calc(100vh * 210 * var(--multiplier));
+  object-fit: cover;
+  filter: grayscale() brightness(130%) contrast(1.4);
+}
