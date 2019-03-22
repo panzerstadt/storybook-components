@@ -4,9 +4,10 @@ import styles from "./Blog.module.css";
 import { shorten } from "./index";
 
 export const BlogWithImage = ({ post, index }) => {
-  console.log(post);
+  const flipStyle = index % 2 ? styles.flip : "";
+
   return (
-    <div className={styles.postDiv}>
+    <div className={styles.postDiv + " " + flipStyle}>
       <div className={styles.imgDiv} style={{ height: 300 }}>
         <img className={styles.img} src={post.feature_image} alt="img" />
       </div>
@@ -20,20 +21,18 @@ export const BlogWithImage = ({ post, index }) => {
 
 export const BlogNoImage = ({ post, index }) => {
   return (
-    <div className={styles.postDiv}>
-      <div className={styles.postDivBorder} style={{ width: 300, height: 400 }}>
-        <div
-          className={styles.postDivPadding}
-          style={{ justifyContent: "center" }}
-        >
-          <div className={styles.textDiv}>
-            <p
-              className={styles.text}
-              style={{ fontSize: "1.3rem", fontWeight: 200, padding: 30 }}
-            >
-              {shorten(post.excerpt)}
-            </p>
-          </div>
+    <div className={styles.postDivFull}>
+      <div
+        className={styles.postDivPadding}
+        style={{ justifyContent: "center" }}
+      >
+        <div className={styles.textDiv}>
+          <p
+            className={styles.text}
+            style={{ fontSize: "1.5rem", fontWeight: 200 }}
+          >
+            {shorten(post.excerpt)}
+          </p>
         </div>
       </div>
     </div>

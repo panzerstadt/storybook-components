@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+.postDivFull {
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .postDivBorder {
   transition: transform 300ms ease;
   background-color: white;
@@ -29,6 +37,7 @@
   flex-direction: column;
   overflow: hidden;
   height: calc(100% - 10px);
+  padding: 20px;
 }
 
 .imgDiv {
@@ -44,7 +53,8 @@
 
 .textDiv {
   margin: 0 10px;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   text-align: left;
 }
 
@@ -65,9 +75,12 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .postDiv {
     flex-direction: row;
+  }
+  .flip {
+    flex-direction: row-reverse;
   }
   .img {
     width: 300px;

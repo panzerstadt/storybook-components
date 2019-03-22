@@ -49,11 +49,15 @@ export const FetchGhost = ({ onFetched, theme = "blog" }) => {
         alignItems: "center"
       }}
     >
-      {posts.map(p => {
+      {posts.map((p, i) => {
         if (p.feature_image) {
-          return <WithImage key={p.comment_id} theme={theme} post={p} />;
+          return (
+            <WithImage key={p.comment_id} index={i} theme={theme} post={p} />
+          );
         } else {
-          return <NoImage key={p.comment_id} theme={theme} post={p} />;
+          return (
+            <NoImage key={p.comment_id} index={i} theme={theme} post={p} />
+          );
         }
       })}
     </div>
