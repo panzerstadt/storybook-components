@@ -2,5 +2,47 @@
   display: flex;
   width: 100%;
   overflow-x: scroll;
-  overflow-y: visible;
+  overflow-y: auto;
+}
+
+.paginationDiv {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagebtn {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(73, 73, 73);
+}
+.pagination {
+  composes: pagebtn;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.disabled {
+  composes: pagination;
+  pointer-events: none;
+  color: lightgrey;
+}
+
+.pagebtn {
+  outline: none;
+  border: none;
+}
+
+.paginationLeft {
+  composes: pagination;
+}
+
+.paginationRight {
+  composes: pagination;
+}
+
+.paginationText {
+  font-weight: 600;
+  color: rgb(73, 73, 73);
 }

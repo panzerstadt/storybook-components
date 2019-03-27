@@ -10,6 +10,7 @@ import { FetchGhost } from "../components/Ghost";
 import VideoPoster from "../components/VideoPoster";
 import FloorPlan from "../components/FloorPlan";
 import { Ticket } from "../components/CssGrid";
+import Posenet, { ReplayPosenet } from "../components/Posenet";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -55,3 +56,7 @@ storiesOf("VideoPoster", module).add("Simple", () => <VideoPoster />);
 storiesOf("Floor Plan", module).add("Static", () => <FloorPlan />);
 
 storiesOf("CSS Grid", module).add("Ticket", () => <Ticket />);
+
+storiesOf("Posenet", module)
+  .add("Compete", () => <Posenet />)
+  .add("Replay", () => <ReplayPosenet />);

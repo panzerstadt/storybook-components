@@ -3,9 +3,13 @@ import styles from "./Gallery.module.css";
 
 import { shorten } from "./index";
 
-export const GalleryWithImage = ({ post }) => {
+export const GalleryWithImage = ({ post, index, ...rest }) => {
   return (
-    <div className={styles.postDiv}>
+    <div
+      className={styles.postDiv}
+      style={{ paddingLeft: index === 0 ? 10 : 0 }}
+      {...rest}
+    >
       <div className={styles.postDivBorder} style={{ width: 300, height: 400 }}>
         <div className={styles.postDivPadding}>
           <div className={styles.imgDiv} style={{ height: 300 }}>
@@ -20,9 +24,13 @@ export const GalleryWithImage = ({ post }) => {
   );
 };
 
-export const GalleryNoImage = ({ post }) => {
+export const GalleryNoImage = ({ post, index, ...rest }) => {
   return (
-    <div className={styles.postDiv}>
+    <div
+      className={styles.postDiv}
+      style={{ paddingLeft: index === 0 ? 10 : 0 }}
+      {...rest}
+    >
       <div className={styles.postDivBorder} style={{ width: 300, height: 400 }}>
         <div
           className={styles.postDivPadding}

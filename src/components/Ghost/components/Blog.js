@@ -3,11 +3,11 @@ import styles from "./Blog.module.css";
 
 import { shorten } from "./index";
 
-export const BlogWithImage = ({ post, index }) => {
+export const BlogWithImage = ({ post, index, ...rest }) => {
   const flipStyle = index % 2 ? styles.flip : "";
 
   return (
-    <div className={styles.postDiv + " " + flipStyle}>
+    <div className={styles.postDiv + " " + flipStyle} {...rest}>
       <div className={styles.imgDiv} style={{ height: 300 }}>
         <img className={styles.img} src={post.feature_image} alt="img" />
       </div>
@@ -19,9 +19,9 @@ export const BlogWithImage = ({ post, index }) => {
   );
 };
 
-export const BlogNoImage = ({ post, index }) => {
+export const BlogNoImage = ({ post, index, ...rest }) => {
   return (
-    <div className={styles.postDivFull}>
+    <div className={styles.postDivFull} {...rest}>
       <div
         className={styles.postDivPadding}
         style={{ justifyContent: "center" }}
