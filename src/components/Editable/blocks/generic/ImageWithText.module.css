@@ -1,0 +1,44 @@
+.dataBlockDiv {
+  margin: 1rem 0;
+}
+
+.dataBlock {
+  margin: 0;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dataBlockImage {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.178);
+}
+
+.dndOverlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+}
+
+.dataBlockText {
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  margin: 5px 0;
+
+  padding: 0;
+  outline: none;
+}

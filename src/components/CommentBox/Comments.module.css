@@ -1,0 +1,29 @@
+.comments {
+  max-width: 750px;
+  min-width: min-content;
+}
+
+.comments > * {
+  margin-bottom: 16px;
+}
+
+.comments > *:last-child {
+  margin-bottom: 0px;
+}
+
+.comments #comments,
+.comments #commentCount {
+  font-weight: 900;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 8px;
+}
+
+.comments #comments {
+  color: #ffffff;
+}
+
+.comments #commentCount {
+  color: #53626f;
+}

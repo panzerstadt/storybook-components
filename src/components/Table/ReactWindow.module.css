@@ -1,0 +1,50 @@
+.grid {
+  /* border: 1px solid #d9dddd; */
+}
+
+.gridItemEven,
+.gridItemOdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridItemEven {
+  background-color: #f8f8f0;
+}
+
+.gridRowHeader {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(250, 250, 250);
+  border-bottom: 1px solid lightgrey;
+}
+
+.gridRowHeaderEven {
+  composes: gridRowHeader;
+  background-color: rgb(245, 245, 245);
+}
+
+.gridRowHeaderOdd {
+  composes: gridRowHeader;
+}
+
+.gridColHeader {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-right: 1px solid lightgrey;
+}
+
+.gridColHeaderEven {
+  composes: gridColHeader;
+  background-color: white;
+}
+
+.gridColHeaderOdd {
+  composes: gridColHeader;
+}

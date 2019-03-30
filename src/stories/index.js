@@ -11,6 +11,10 @@ import VideoPoster from "../components/VideoPoster";
 import FloorPlan from "../components/FloorPlan";
 import { Ticket } from "../components/CssGrid";
 import Posenet, { ReplayPosenet } from "../components/Posenet";
+import Form from "../components/Formik";
+import Table from "../components/Table";
+import Comment from "../components/CommentBox";
+import Particles from "../components/Particles";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -60,3 +64,26 @@ storiesOf("CSS Grid", module).add("Ticket", () => <Ticket />);
 storiesOf("Posenet", module)
   .add("Compete", () => <Posenet />)
   .add("Replay", () => <ReplayPosenet />);
+
+const formik = storiesOf("Forms", module);
+formik.addDecorator(withKnobs);
+formik.add("Basic Forms", () => {
+  const label = "Types";
+  const options = {
+    login: "login",
+    email: "email",
+    generic: "generic"
+  };
+  const defaultValue = "email";
+  const groupId = "GROUP-ID2";
+
+  const value = select(label, options, defaultValue, groupId);
+
+  return <Form template={value} />;
+});
+
+storiesOf("Tables", module).add("Infinite", () => <Table />);
+
+storiesOf("Comment Box", module).add("Comment", () => <Comment />);
+
+storiesOf("Particles", module).add("2D Particles", () => <Particles />);

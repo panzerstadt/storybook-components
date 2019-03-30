@@ -3,7 +3,9 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import fetchGhost, { FetchGhost } from "./components/Ghost";
-import Form from "./components/Formik";
+import Comment from "./components/CommentBox";
+import Editable from "./components/Editable";
+
 class App extends Component {
   state = { posts: [] };
   componentDidMount() {
@@ -16,7 +18,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         {/* <FetchGhost theme="gallery" limit={10} /> */}
-        <Form />
+        <Editable />
       </div>
     );
   }

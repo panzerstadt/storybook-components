@@ -1,0 +1,109 @@
+/*main*/
+.comment {
+  display: flex;
+  text-align: left;
+
+  padding: 16px 16px 16px 12px;
+  border: 0.1px solid #3d4953;
+  border-radius: 8px;
+}
+
+#showMore {
+  background: none;
+  border: none;
+  color: #53626f;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+
+#showMore:hover {
+  text-decoration: underline;
+}
+
+.comments > * {
+  margin-bottom: 16px;
+}
+
+.comments > *:last-child {
+  margin-bottom: 0px;
+}
+
+.comments.hidden {
+  display: none;
+}
+
+#left {
+  text-align: center;
+}
+
+#left.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/*right*/
+
+#right {
+  flex-grow: 1;
+}
+
+#right > #top.minimize {
+  cursor: pointer;
+  color: #53626f;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+
+#right > #top #username {
+  color: #4f9eed;
+}
+
+#right > #top #date {
+  display: inline-block;
+  color: #53626f;
+}
+
+#right > #top > * {
+  margin-right: 8px;
+}
+
+#right > #content {
+  color: #cccccc;
+}
+
+#right > #content.hidden {
+  display: none;
+}
+
+#right > #actions {
+  color: #53626f;
+  margin-bottom: 12px;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#right > #actions.hidden {
+  display: none;
+}
+
+#right > #actions > .selected {
+  font-weight: bold;
+}
+
+#right > #actions > * {
+  cursor: pointer;
+  margin-right: 8px;
+}

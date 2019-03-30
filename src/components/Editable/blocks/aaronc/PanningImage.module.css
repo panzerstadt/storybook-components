@@ -1,0 +1,107 @@
+:root {
+  --scale: 1.8;
+}
+
+.dataBlockDiv {
+  margin: 1rem 0;
+}
+
+.dataBlock {
+  margin: 0;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dataBlockImage {
+  height: 500px;
+
+  width: 100%;
+  object-fit: cover;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  box-shadow: 1px 2px 12px rgba(75, 28, 28, 0.178);
+}
+
+.dndOverlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.315);
+}
+
+.dataBlockText {
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  margin: 5px 0;
+
+  padding: 0;
+  outline: none;
+}
+
+.heroContainer {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroImg {
+  transition: opacity 300ms ease;
+  opacity: 1;
+  /* transform: scale(1.5); */
+}
+
+.animated {
+  animation: heroPan 30s linear 500ms infinite;
+}
+
+/* https://codeburst.io/css-transitions-and-animations-motion-path-module-css-a4d62d6ee802 */
+/* https://krofdrakula.github.io/css-animation-bezier/ */
+@keyframes heroPan {
+  0.0000% {
+    opacity: 0;
+    transform: scale(var(--scale)) translate(-181px, 89px);
+  }
+  7.1655% {
+    opacity: 1;
+    transform: scale(var(--scale)) translate(-155.2px, 67.9px);
+  }
+  12.9511% {
+    transform: scale(var(--scale)) translate(-132.1px, 54.3px);
+  }
+  26.4846% {
+    transform: scale(var(--scale)) translate(-74.8px, 28.3px);
+  }
+  41.7466% {
+    transform: scale(var(--scale)) translate(-7.9px, 4.7px);
+  }
+  57.5410% {
+    transform: scale(var(--scale)) translate(62.6px, -15.8px);
+  }
+  72.6191% {
+    transform: scale(var(--scale)) translate(130.7px, -32.6px);
+  }
+  85.7101% {
+    transform: scale(var(--scale)) translate(190.2px, -45px);
+  }
+  95.5356% {
+    opacity: 1;
+    transform: scale(var(--scale)) translate(235.3px, -52.3px);
+  }
+  100.0000% {
+    opacity: 0;
+    transform: scale(var(--scale)) translate(256px, -54px);
+  }
+}

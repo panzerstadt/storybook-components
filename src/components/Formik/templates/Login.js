@@ -7,8 +7,9 @@ import error from "../assets/error.svg";
 import success from "../assets/success.svg";
 const BUTTON_HEIGHT = 30;
 
-const EmailForm = props => {
+const LoginForm = props => {
   const [submitted, setSubmitted] = useState(false);
+  const [user, setUser] = useState("");
 
   const theme = props.theme;
   let styles;
@@ -16,7 +17,7 @@ const EmailForm = props => {
   if (theme === "apple") {
     styles = require("./AppleTheme.module.css");
   } else {
-    styles = require("./Email.module.css");
+    styles = require("./Login.module.css");
   }
 
   return (
@@ -37,6 +38,9 @@ const EmailForm = props => {
 
         const handleSubmitted = e => {
           setSubmitted(true);
+
+          const u = values.email.split("@")[0];
+          setUser(u);
 
           if (props.onSubmit)
             props.onSubmit({ submitted: true, value: values });
@@ -84,15 +88,29 @@ const EmailForm = props => {
                     : styles.textInput
                 }
               />
-              <button
+              <input
+                id="password"
+                placeholder="Password"
+                type="password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.password && touched.password
+                    ? styles.textInput + " " + styles.error
+                    : styles.textInput
+                }
+              />
+            </div>
+
+            {/* <button
                 type="button"
                 className={styles.reset}
                 onClick={handleReset}
                 disabled={!dirty || isSubmitting}
               >
                 <img src={error} height={BUTTON_HEIGHT} alt="x" />
-              </button>
-            </div>
+              </button> */}
 
             <button
               className={styles.submit}
@@ -107,9 +125,7 @@ const EmailForm = props => {
         const thankYouDiv = (
           <div className={styles.inputContainer}>
             <img src={success} height={BUTTON_HEIGHT} alt="v" />
-            <h1 className={styles.thank}>
-              Thank you. We will contact you soon.
-            </h1>
+            <h1 className={styles.thank}>Welcome {user}.</h1>
           </div>
         );
 
@@ -120,10 +136,10 @@ const EmailForm = props => {
               htmlFor="email"
               style={{ display: "block" }}
             >
-              Keep in Touch.
+              Sign In.
             </h1>
             <h4 className={styles.subtitle}>
-              Sign up and we'll send you the latest news from us. No Spam.
+              Login with your email and password.
             </h4>
             {submitted ? thankYouDiv : inputDiv}
 
@@ -136,4 +152,4 @@ const EmailForm = props => {
   );
 };
 
-export default EmailForm;
+export default LoginForm;

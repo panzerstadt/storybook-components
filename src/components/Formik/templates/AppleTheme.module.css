@@ -19,11 +19,6 @@ body {
   background-color: #fff;
 }
 
-.input-feedback {
-  color: var(--error-color);
-  margin-top: 0.25rem;
-}
-
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed !important;
@@ -49,6 +44,11 @@ input:focus {
   outline: none;
 }
 
+.input-feedback {
+  color: var(--error-color);
+  margin-top: 0.25rem;
+}
+
 .form {
   text-align: center;
   max-width: 800px;
@@ -70,10 +70,26 @@ input:focus {
   color: rgba(0, 0, 0, 0.781);
 }
 
+.inputBar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .inputContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 600px) {
+  .inputContainer {
+    flex-direction: row;
+  }
+  .inputBar {
+    margin-bottom: 0;
+  }
 }
 
 button:disabled {
@@ -92,8 +108,9 @@ button {
   height: 50px;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 25px;
-  max-width: 150px;
+
+  width: 100%;
+  /* max-width: 150px; */
   padding: 12px 20px;
   border-style: none;
   border-radius: 5px;
@@ -102,6 +119,13 @@ button {
   font-size: 17px;
   font-weight: 500;
   color: #fff;
+}
+
+@media (min-width: 600px) {
+  .submit {
+    margin-left: 10px;
+    max-width: 100px;
+  }
 }
 
 .reset {
