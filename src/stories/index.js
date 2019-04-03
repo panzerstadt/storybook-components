@@ -15,6 +15,9 @@ import Form from "../components/Formik";
 import Table from "../components/Table";
 import Comment from "../components/CommentBox";
 import Particles from "../components/Particles";
+import Fetch, {
+  FetchWithoutReducer
+} from "../components/ReducerHooksFetch/index";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -87,3 +90,7 @@ storiesOf("Tables", module).add("Infinite", () => <Table />);
 storiesOf("Comment Box", module).add("Comment", () => <Comment />);
 
 storiesOf("Particles", module).add("2D Particles", () => <Particles />);
+
+storiesOf("Fetching with Reducers", module)
+  .add("With Reducer", () => <Fetch />)
+  .add("Without Reducer", () => <FetchWithoutReducer />);

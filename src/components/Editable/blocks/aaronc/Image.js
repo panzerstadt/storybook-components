@@ -21,8 +21,6 @@ const DataBlock = ({ data, onUpdate, mode }) => {
       incomingData = data;
     }
 
-    console.log(incomingData);
-
     // set all the blocks
     incomingData.map((d, i) => {
       if (d.type === "text") {

@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-info": "^5.0.6",
     "@tensorflow-models/posenet": "^1.0.0",
     "@tensorflow/tfjs": "^1.0.2",
     "@tryghost/content-api": "^1.1.0",
@@ -36,7 +37,8 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s build",
+    "deploy-storybook": "yarn build-storybook && yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -39,6 +39,12 @@
   resize: vertical;
 }
 
+.fixInput {
+  pointer-events: visible;
+  resize: none;
+  overflow: hidden;
+}
+
 .textBlock {
   width: 100%;
   max-width: 600px;

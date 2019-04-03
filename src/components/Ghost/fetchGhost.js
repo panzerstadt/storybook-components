@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import GhostContentAPI from "@tryghost/content-api";
 
 import styles from "./fetchGhost.module.css";

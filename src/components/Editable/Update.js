@@ -7,6 +7,7 @@ import styles from "./Update.module.css";
 import { ShowDB, ReadFromFirebase } from "./Read";
 import DataBlock, { AaronC } from "./blocks";
 
+import { initialData } from "./blocks/aaronc/data";
 const DB_REF = "0003-aaron-chew/data";
 
 export const updateDB = (databaseRef = DB_REF, data) => {
@@ -31,18 +32,32 @@ export const Update = ({ databaseRef = DB_REF, onUpdated, children }) => {
   const [dbRef, setDbRef] = useState();
   const [dbState, setDBState] = useState({});
   const [newDBState, setNewDBState] = useState(dbState);
-  useEffect(() => {
-    const ref = firebase.database().ref(databaseRef);
-    setDbRef(ref);
 
-    ref.on("value", snapshot => {
-      let data = snapshot.val();
-      const keys = Object.keys(snapshot.val());
-      keys.map(k => {
-        data[k] = { ...data[k], uid: k };
+  // initial hydrate
+  useEffect(() => {
+    const init = () => {
+      const ref = firebase.database().ref(databaseRef);
+      setDbRef(ref);
+
+      ref.on("value", snapshot => {
+        // handle error
+        if (!snapshot.exists()) return initFromLocal();
+
+        let data = snapshot.val();
+        const keys = Object.keys(snapshot.val());
+        keys.map(k => {
+          data[k] = { ...data[k], uid: k };
+        });
+        setDBState(data);
       });
+    };
+
+    const initFromLocal = () => {
+      const data = initialData;
       setDBState(data);
-    });
+    };
+
+    init();
   }, []);
 
   // CREATE EDITABLE COMPONENTS
@@ -78,21 +93,25 @@ export const Update = ({ databaseRef = DB_REF, onUpdated, children }) => {
           );
         } else if (data[k].type === "image") {
           return (
-            <AaronC.image
-              key={k}
-              data={data[k]}
-              mode="edit"
-              onUpdate={handleChange}
-            />
+            <Editable key={k} uid={k} toDelete={!dbState[k]}>
+              <AaronC.image
+                key={k}
+                data={data[k]}
+                mode="edit"
+                onUpdate={handleChange}
+              />
+            </Editable>
           );
         } else if (data[k].type === "heroImage") {
           return (
-            <AaronC.heroImage
-              key={k}
-              data={data[k]}
-              mode="edit"
-              onUpdate={handleChange}
-            />
+            <Editable key={k} uid={k} toDelete={!dbState[k]}>
+              <AaronC.heroImage
+                key={k}
+                data={data[k]}
+                mode="edit"
+                onUpdate={handleChange}
+              />
+            </Editable>
           );
         } else {
           return (
