@@ -6,6 +6,10 @@ import fetchGhost, { FetchGhost } from "./components/Ghost";
 import Comment from "./components/CommentBox";
 import Editable from "./components/Editable";
 
+import DynamicCursor from "./components/Cursors";
+import MobileDevice from "./components/MobileDeviceAPIs";
+import SimplexTubes from "./components/Animations/SimplexTubes";
+
 class App extends Component {
   state = { posts: [] };
   componentDidMount() {
@@ -18,7 +22,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         {/* <FetchGhost theme="gallery" limit={10} /> */}
-        <Editable />
+        {/* <DynamicCursor /> */}
+        {/* <Editable /> */}
+        {/* <MobileDevice /> */}
+        <SimplexTubes />
       </div>
     );
   }

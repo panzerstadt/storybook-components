@@ -1,0 +1,97 @@
+.tutorial {
+  height: 95vh;
+  width: 100vw;
+  overflow: hidden;
+
+  --color-text: #fff;
+  --color-bg: #171717;
+  --color-link: #ff0000;
+  background-color: var(--color-bg);
+}
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page__inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.cursor__small {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: var(--color-text);
+}
+.cursor__canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: 12000;
+}
+
+.nav {
+  z-index: 2000;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.link {
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px dashed rgb(58, 58, 58);
+}
+
+.link * {
+  stroke: white;
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.icon {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.link:hover .icon__line,
+.link:hover .icon__rect {
+  stroke: var(--color-link);
+}
+
+.link:hover .icon__group1 .icon__rect {
+  transform: translateY(20px);
+}
+.link:hover .icon__group2 .icon__rect {
+  transform: translateY(-20px);
+}
+.link:hover .icon__group3 .icon__rect {
+  transform: translateY(25px);
+}
+
+/* hide cursor */
+.page,
+.page a {
+  cursor: none;
+}

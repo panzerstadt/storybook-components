@@ -14,10 +14,18 @@ import Posenet, { ReplayPosenet } from "../components/Posenet";
 import Form from "../components/Formik";
 import Table from "../components/Table";
 import Comment from "../components/CommentBox";
-import Particles from "../components/Particles";
+import Particles from "../components/Animations/Particles";
+import SimplexTubes from "../components/Animations/SimplexTubes";
 import Fetch, {
   FetchWithoutReducer
 } from "../components/ReducerHooksFetch/index";
+import DynamicCursor from "../components/Cursors";
+import Camera from "../components/Camera";
+import {
+  BrightnessPredictor,
+  BrightnessTrainer,
+  BrightnessDataCollector
+} from "../components/Tensorflow";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -89,8 +97,21 @@ storiesOf("Tables", module).add("Infinite", () => <Table />);
 
 storiesOf("Comment Box", module).add("Comment", () => <Comment />);
 
-storiesOf("Particles", module).add("2D Particles", () => <Particles />);
+storiesOf("Animations", module)
+  .add("2D Particles", () => <Particles />)
+  .add("Simplex Tubes", () => <SimplexTubes />);
 
 storiesOf("Fetching with Reducers", module)
   .add("With Reducer", () => <Fetch />)
   .add("Without Reducer", () => <FetchWithoutReducer />);
+
+storiesOf("Cursors", module).add("Magnetic Circle (WIP)", () => (
+  <DynamicCursor type="default" />
+));
+
+storiesOf("Camera", module).add("Camera with onRef", () => <Camera />);
+
+storiesOf("ML - Tensorflow", module)
+  .add("Brightness Data Collector", () => <BrightnessDataCollector />)
+  .add("Brightness Predictor", () => <BrightnessPredictor />)
+  .add("Brightness Trainer", () => <BrightnessTrainer />);

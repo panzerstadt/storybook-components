@@ -1,0 +1,9 @@
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
+.table > tr > td {
+  padding-right: 30px;
+}
