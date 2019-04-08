@@ -90,3 +90,11 @@ export const convertToArray = domOBJ => {
   }
   return arr;
 };
+
+export const convertToObject = domOBJ => {
+  let obj = {};
+  for (var p in domOBJ) {
+    obj[p] = domOBJ[p];
+  }
+  return obj;
+};

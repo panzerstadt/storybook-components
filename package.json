@@ -43,7 +43,8 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook -o .out",
+    "copy-assets": "cp -r public/assets .out/assets",
+    "build-storybook": "build-storybook -c .storybook -o .out && yarn copy-assets",
     "deploy-storybook": "yarn build-storybook && gh-pages -d .out"
   },
   "eslintConfig": {

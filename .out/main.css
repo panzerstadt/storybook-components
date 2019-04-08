@@ -3100,5 +3100,18 @@ button {
   z-index: 12000;
 }
 
+.Gallery_gallery__2Dg7X {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  overflow-x: auto;
+}
+
+.Gallery_gallery__2Dg7X > img {
+  height: 300px;
+  width: 600ox;
+  object-fit: cover;
+}
+
 
 /*# sourceMappingURL=main.css.map*/
