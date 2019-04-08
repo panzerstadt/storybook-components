@@ -1,0 +1,35 @@
+.link {
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px dashed rgb(58, 58, 58);
+}
+
+.link * {
+  stroke: white;
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.icon {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.link:hover .icon__line,
+.link:hover .icon__rect {
+  stroke: var(--color-link);
+}
+
+.link:hover .icon__group1 .icon__line {
+  transform: translateY(-10px);
+}
+
+.link:hover .icon__group3 .icon__line {
+  transform: translateY(10px);
+}
