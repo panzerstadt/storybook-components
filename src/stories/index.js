@@ -105,7 +105,7 @@ storiesOf("Fetching with Reducers", module)
   .add("With Reducer", () => <Fetch />)
   .add("Without Reducer", () => <FetchWithoutReducer />);
 
-storiesOf("Cursors", module).add("Magnetic Circle (WIP)", () => (
+storiesOf("Cursors", module).add("Magnetic Noisy Circle", () => (
   <DynamicCursor type="default" />
 ));
 
