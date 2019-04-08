@@ -2968,7 +2968,7 @@ button {
           align-items: center;
 }
 
-.Canvas_tutorial__3dOlb {
+.Cursors_tutorial__3TSnE {
   height: 95vh;
   width: 100vw;
   overflow: hidden;
@@ -2978,7 +2978,7 @@ button {
   --color-link: #ff0000;
   background-color: var(--color-bg);
 }
-.Canvas_page__1ske0 {
+.Cursors_page__3v-6o {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2989,7 +2989,7 @@ button {
   -webkit-align-items: center;
           align-items: center;
 }
-.Canvas_page__inner__2rsBd {
+.Cursors_page__inner__3P4CC {
   position: relative;
   display: -webkit-flex;
   display: flex;
@@ -2998,28 +2998,7 @@ button {
   width: 100%;
 }
 
-.Canvas_cursor__zliQo {
-  position: fixed;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
-.Canvas_cursor__small__R4Y4b {
-  width: 5px;
-  height: 5px;
-  left: -2.5px;
-  top: -2.5px;
-  border-radius: 50%;
-  z-index: 11000;
-  background: var(--color-text);
-}
-.Canvas_cursor__canvas__1BzBp {
-  width: 100vw;
-  height: 100vh;
-  z-index: 12000;
-}
-
-.Canvas_nav__2sifJ {
+.Cursors_nav__3xh3l {
   z-index: 2000;
   display: -webkit-flex;
   display: flex;
@@ -3029,53 +3008,10 @@ button {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.Canvas_link__Bv4EP {
-  display: -webkit-flex;
-  display: flex;
-  width: 75px;
-  height: 75px;
-  margin: 0 5px;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-
-  border: 1px dashed rgb(58, 58, 58);
-}
-
-.Canvas_link__Bv4EP * {
-  stroke: white;
-  stroke-width: 5px;
-  transition: all 0.2s ease 0.05s;
-}
-
-.Canvas_icon__1mONA {
-  display: block;
-  height: 40px;
-  width: 40px;
-}
-
-.Canvas_link__Bv4EP:hover .Canvas_icon__line__3hxbk,
-.Canvas_link__Bv4EP:hover .Canvas_icon__rect__2YdfT {
-  stroke: var(--color-link);
-}
-
-.Canvas_link__Bv4EP:hover .Canvas_icon__group1__3nFsh .Canvas_icon__rect__2YdfT {
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
-}
-.Canvas_link__Bv4EP:hover .Canvas_icon__group2__3fOqy .Canvas_icon__rect__2YdfT {
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-}
-.Canvas_link__Bv4EP:hover .Canvas_icon__group3__2x2k3 .Canvas_icon__rect__2YdfT {
-  -webkit-transform: translateY(25px);
-          transform: translateY(25px);
-}
 
 /* hide cursor */
-.Canvas_page__1ske0,
-.Canvas_page__1ske0 a {
+.Cursors_page__3v-6o,
+.Cursors_page__3v-6o a {
   cursor: none;
 }
 
@@ -3098,6 +3034,187 @@ button {
   width: 100vw;
   height: 100vh;
   z-index: 12000;
+}
+
+.Dot_cursor__UiV2t {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.Dot_cursor__small__3MXb6 {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: var(--color-text);
+}
+
+.Box_cursor__1LyzC {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.Box_cursor__small__2zsRf {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 1px;
+  z-index: 11000;
+  background: var(--color-text);
+}
+
+.Line_cursor__2sb9_ {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.Line_cursor__small__2Z-37 {
+  width: 15px;
+  height: 5px;
+  left: -7.5px;
+  top: -2.5px;
+  border-radius: 1px;
+  z-index: 11000;
+  background: var(--color-text);
+}
+
+.Unicorn_cursor__3XweX {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.Unicorn_cursor__small__3w9xc {
+  width: 5px;
+  height: 5px;
+  left: -2.5px;
+  top: -2.5px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: var(--color-text);
+}
+
+.Settings_link__1_joV {
+  display: -webkit-flex;
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+
+  border: 1px dashed rgb(58, 58, 58);
+}
+
+.Settings_link__1_joV * {
+  stroke: white;
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.Settings_icon__1HbyT {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.Settings_link__1_joV:hover .Settings_icon__line__2dZGM,
+.Settings_link__1_joV:hover .Settings_icon__rect__mzhl3 {
+  stroke: var(--color-link);
+}
+
+.Settings_link__1_joV:hover .Settings_icon__group1__r1M2o .Settings_icon__rect__mzhl3 {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+.Settings_link__1_joV:hover .Settings_icon__group2__1H5_d .Settings_icon__rect__mzhl3 {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+.Settings_link__1_joV:hover .Settings_icon__group3__371rJ .Settings_icon__rect__mzhl3 {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+}
+
+.Circle_link__2QTJD {
+  display: -webkit-flex;
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+
+  border: 1px dashed rgb(58, 58, 58);
+}
+
+.Circle_icon__1qcLf {
+  display: block;
+  height: 20px;
+  width: 20px;
+
+  transition: border 100ms linear;
+  border: 2px solid white;
+  border-radius: 100%;
+}
+
+.Circle_link__2QTJD:hover .Circle_icon__1qcLf {
+  border: 3px solid var(--color-link);
+}
+
+.Hamburger_link__1YHtK {
+  display: -webkit-flex;
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+
+  border: 1px dashed rgb(58, 58, 58);
+}
+
+.Hamburger_link__1YHtK * {
+  stroke: white;
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.Hamburger_icon__2xnzN {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.Hamburger_link__1YHtK:hover .Hamburger_icon__line__15ebr,
+.Hamburger_link__1YHtK:hover .Hamburger_icon__rect__2INcD {
+  stroke: var(--color-link);
+}
+
+.Hamburger_link__1YHtK:hover .Hamburger_icon__group1__e3ov9 .Hamburger_icon__line__15ebr {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.Hamburger_link__1YHtK:hover .Hamburger_icon__group3__2RShD .Hamburger_icon__line__15ebr {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .Gallery_gallery__2Dg7X {
