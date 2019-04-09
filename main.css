@@ -2568,22 +2568,31 @@ button {
   font-family: "Nunito";
   text-align: center;
   box-sizing: border-box;
+
+  padding: 8px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 
-.CommentBox_a__2O_UM {
+.CommentBox_commentBox__259FB a {
   color: inherit;
   text-decoration: none;
 }
 
-.CommentBox_a__2O_UM:hover {
+.CommentBox_commentBox__259FB a:hover {
   text-decoration: underline;
 }
 
 .Comments_comments__37a1x {
   max-width: 750px;
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  /* min-width: min-content; */
+  width: 90%;
 }
 
 .Comments_comments__37a1x > * {
@@ -2601,6 +2610,9 @@ button {
   display: inline-block;
   margin-right: 4px;
   margin-bottom: 8px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .Comments_comments__37a1x #Comments_comments__37a1x {
@@ -2663,16 +2675,11 @@ button {
           flex-grow: 1;
 }
 
-#Comment_right__2sPTt > #Comment_top__1x2rf.Comment_minimize__Bpnj_ {
+#Comment_right__2sPTt .Comment_minimize__Bpnj_ {
   cursor: pointer;
   color: #53626f;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome and Opera */
+  outline: none;
 }
 
 #Comment_right__2sPTt > #Comment_top__1x2rf #Comment_username__6TkHb {
@@ -2700,15 +2707,10 @@ button {
   color: #53626f;
   margin-bottom: 12px;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  outline: none;
 }
 
-#Comment_right__2sPTt > #Comment_actions__2UfeH.Comment_hidden__1U7BQ {
+#Comment_actions__2UfeH.Comment_hidden__1U7BQ {
   display: none;
 }
 
@@ -2719,6 +2721,10 @@ button {
 #Comment_right__2sPTt > #Comment_actions__2UfeH > * {
   cursor: pointer;
   margin-right: 8px;
+}
+
+.Comment_hidden__1U7BQ {
+  display: none;
 }
 
 .Markdown_code__W8ZFb {
@@ -2764,19 +2770,19 @@ button {
   cursor: pointer;
   color: #3d4953;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  outline: none;
 }
 
-.Rating_rating__1-wRS #Rating_thumbs_up__1Me8m.Rating_selected__1PCpU {
+.Rating_rating__1-wRS button#Rating_thumbs_up__1Me8m > *,
+.Rating_rating__1-wRS button#Rating_thumbs_down__2gfVh > * {
+  color: #3d4953;
+}
+
+.Rating_rating__1-wRS #Rating_thumbs_up__1Me8m.Rating_selected__1PCpU > * {
   color: #4f9eed;
 }
 
-.Rating_rating__1-wRS #Rating_thumbs_down__2gfVh.Rating_selected__1PCpU {
+.Rating_rating__1-wRS #Rating_thumbs_down__2gfVh.Rating_selected__1PCpU > * {
   color: #ed4f4f;
 }
 
@@ -2813,13 +2819,13 @@ button {
   padding: 8px;
 }
 
-.Reply_reply__1_Yt- .Reply_panel__1evr6.Reply_comment_as__1_Krh {
+.Reply_reply__1_Yt- .Reply_comment_as__1_Krh {
   font-size: 14px;
   color: #cccccc;
   margin-right: 8px;
 }
 
-.Reply_reply__1_Yt- .Reply_panel__1evr6.Reply_comment_as__1_Krh.Reply_username__3l-ig {
+.Reply_reply__1_Yt- .Reply_username__3l-ig {
   display: inline-block;
   color: #4f9eed;
 }
@@ -2848,12 +2854,7 @@ button {
   background: #4f9eed;
   transition: 0.1s ease 0s;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  outline: none;
 }
 
 .Button_button__3mEKn:hover {
