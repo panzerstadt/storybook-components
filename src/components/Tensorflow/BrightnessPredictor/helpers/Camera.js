@@ -21,11 +21,11 @@ const WebcamComponent = ({ onRef }) => {
 
   useEffect(() => {
     setupCamera();
-  }, [webcamRef]);
 
-  if (cameraReady) {
-    onRef && onRef(webcamRef);
-  }
+    if (cameraReady) {
+      onRef && onRef(webcamRef);
+    }
+  }, [webcamRef, onRef, cameraReady]);
 
   return <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />;
 };

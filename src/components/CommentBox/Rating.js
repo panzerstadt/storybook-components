@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MaterialIcon from "material-icons-react";
 
 import styles from "./Rating.module.css";
 
@@ -10,31 +11,33 @@ function Rating(props) {
   return (
     <div {...props} className={styles.rating}>
       <button
-        className={`material-icons ${thumbsUp ? "selected" : ""}`}
-        id="thumbs_up"
+        className={thumbsUp ? styles.selected : ""}
+        id={styles.thumbs_up}
         onClick={() => {
           setThumbsUp(!thumbsUp);
           setThumbsDown(false);
         }}
       >
-        keyboard_arrow_up
+        <MaterialIcon icon="keyboard_arrow_up" />
       </button>
       <div
-        className={`count ${thumbsUp ? "up" : ""} ${thumbsDown ? "down" : ""}`}
+        className={`${styles.count} ${thumbsUp ? styles.up : ""} ${
+          thumbsDown ? styles.down : ""
+        }`}
       >
         {thumbsUp ? count + 1 : ""}
         {thumbsDown ? count - 1 : ""}
         {thumbsUp || thumbsDown ? "" : count}
       </div>
       <button
-        className={`material-icons ${thumbsDown ? "selected" : ""}`}
-        id="thumbs_down"
+        className={`material-icons ${thumbsDown ? styles.selected : ""}`}
+        id={styles.thumbs_down}
         onClick={() => {
           setThumbsDown(!thumbsDown);
           setThumbsUp(false);
         }}
       >
-        keyboard_arrow_down
+        <MaterialIcon icon="keyboard_arrow_down" />
       </button>
     </div>
   );

@@ -22,10 +22,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         {/* <FetchGhost theme="gallery" limit={10} /> */}
-        <DynamicCursor />
+        {/* <DynamicCursor /> */}
         {/* <Editable /> */}
         {/* <MobileDevice /> */}
         {/* <SimplexTubes /> */}
+        <Comment />
       </div>
     );
   }

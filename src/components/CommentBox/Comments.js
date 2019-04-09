@@ -104,6 +104,7 @@ function Comments(props) {
       </span>
       <span className={styles.comments} id={styles.commentCount}>
         (9)
+        {/* recursive count needed */}
       </span>
       <Reply />
       <CommentContext.Provider value={[replying, setReplying]}>

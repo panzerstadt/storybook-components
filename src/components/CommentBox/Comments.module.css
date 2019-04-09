@@ -1,6 +1,7 @@
 .comments {
   max-width: 750px;
-  min-width: min-content;
+  /* min-width: min-content; */
+  width: 90%;
 }
 
 .comments > * {
@@ -18,6 +19,7 @@
   display: inline-block;
   margin-right: 4px;
   margin-bottom: 8px;
+  width: min-content;
 }
 
 .comments #comments {

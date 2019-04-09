@@ -31,13 +31,13 @@
   padding: 8px;
 }
 
-.reply .panel.comment_as {
+.reply .comment_as {
   font-size: 14px;
   color: #cccccc;
   margin-right: 8px;
 }
 
-.reply .panel.comment_as.username {
+.reply .username {
   display: inline-block;
   color: #4f9eed;
 }

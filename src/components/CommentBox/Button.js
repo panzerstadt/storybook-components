@@ -22,7 +22,7 @@ function Button(props) {
   return (
     <button
       {...props}
-      className={styles.button}
+      className={styles.button + " " + props.className}
       ref={button}
       onClick={e => {
         animate(e);

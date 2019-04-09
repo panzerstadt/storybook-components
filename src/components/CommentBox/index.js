@@ -1,5 +1,4 @@
 import React, { useState, useContext, createContext } from "react";
-
 import ThemeContext from "./context";
 
 import styles from "./index.module.css";
@@ -11,7 +10,10 @@ function App(props) {
 
   return (
     <div {...props} className={styles.commentBox}>
-      <h1>Work in Progress port</h1>
+      <link
+        href="https://fonts.googleapis.com/css?family=Nunito"
+        rel="stylesheet"
+      />
       <Comments />
     </div>
   );

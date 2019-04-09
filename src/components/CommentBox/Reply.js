@@ -8,7 +8,7 @@ import Button from "./Button";
 function Reply(props) {
   const [text, setText] = useState("");
   return (
-    <div {...props} className={styles.reply}>
+    <div {...props} className={styles.reply + " " + props.className}>
       <TextArea
         placeholder="What are your thoughts?"
         minRows={2}
@@ -17,10 +17,10 @@ function Reply(props) {
           setText(value.target.value);
         }}
       />
-      <div className="panel">
-        <div className="comment_as">
+      <div className={styles.panel}>
+        <div className={styles.comment_as}>
           Comment as{" "}
-          <a href="" className="username">
+          <a href="" className={styles.username}>
             Kevin
           </a>
         </div>

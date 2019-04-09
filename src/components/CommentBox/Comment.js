@@ -54,14 +54,13 @@ const Comment = props => {
     <div
       {...props}
       className={styles.comment}
-      styles={{
-        background: props =>
-          props.colorindex % 2 === 0 ? "#161C21" : "#13181D"
+      style={{
+        backgroundColor: props.colorindex % 2 === 0 ? "#161C21" : "#13181D"
       }}
     >
       {hidden ? (
         <button
-          id="showMore"
+          id={styles.showMore}
           onClick={() => {
             setHidden(false);
           }}
@@ -70,32 +69,34 @@ const Comment = props => {
         </button>
       ) : (
         <>
-          <div id="left" className={minimized ? "hidden" : ""}>
+          <div id={styles.left} className={minimized ? styles.hidden : ""}>
             <Rating votes={props.votes} />
           </div>
-          <div id="right">
-            <div id="top">
+          <div id={styles.right}>
+            <div id={styles.top}>
               <span
-                className="minimize"
+                className={styles.minimize}
                 onClick={() => {
                   setMinimized(!minimized);
                 }}
               >
                 [{minimized ? "+" : "-"}]
               </span>
-              <span id="username">
+              <span id={styles.username}>
                 <a href="">{props.username}</a>
               </span>
-              <span id="date">
+              <span id={styles.date}>
                 <a href="">{props.date}</a>
               </span>
             </div>
-            <div id="content" className={minimized ? "hidden" : ""}>
+            <div id={styles.content} className={minimized ? styles.hidden : ""}>
               <Markdown options={{ forceBlock: true }}>{props.text}</Markdown>
             </div>
-            <div id="actions" className={minimized ? "hidden" : ""}>
+            <div id={styles.actions} className={minimized ? styles.hidden : ""}>
               <span
-                className={`${compare(replying, props.path) ? "selected" : ""}`}
+                className={`${
+                  compare(replying, props.path) ? styles.selected : ""
+                }`}
                 onClick={() => {
                   if (compare(replying, props.path)) {
                     setReplying([]);
@@ -110,10 +111,12 @@ const Comment = props => {
             </div>
             <Reply
               className={
-                compare(replying, props.path) && !minimized ? "" : "hidden"
+                compare(replying, props.path) && !minimized ? "" : styles.hidden
               }
             />
-            <div className={`${styles.comment} ${minimized ? "hidden" : ""}`}>
+            <div
+              className={`${styles.comments} ${minimized ? styles.hidden : ""}`}
+            >
               {gen_comments(props.comments, props.colorindex + 1, [
                 ...props.path
               ])}
@@ -124,11 +127,5 @@ const Comment = props => {
     </div>
   );
 };
-
-const Comment2 = () => {
-  return <p>hey</p>;
-};
-
-console.log(Comment2);
 
 export default Comment;
