@@ -17,7 +17,8 @@ import Comment from "../components/CommentBox";
 import Particles from "../components/Animations/Particles";
 import SimplexTubes from "../components/Animations/SimplexTubes";
 import Fetch, {
-  FetchWithoutReducer
+  FetchWithoutReducer,
+  SimpleFetch
 } from "../components/ReducerHooksFetch/index";
 import DynamicCursor from "../components/Cursors";
 import Camera from "../components/Camera";
@@ -102,6 +103,7 @@ storiesOf("Animations", module)
   .add("Simplex Tubes", () => <SimplexTubes />);
 
 storiesOf("Fetching with Reducers", module)
+  // .add("Barebones", () => <SimpleFetch />)
   .add("With Reducer", () => <Fetch />)
   .add("Without Reducer", () => <FetchWithoutReducer />);
 

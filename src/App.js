@@ -9,6 +9,7 @@ import Editable from "./components/Editable";
 import DynamicCursor from "./components/Cursors";
 import MobileDevice from "./components/MobileDeviceAPIs";
 import SimplexTubes from "./components/Animations/SimplexTubes";
+import { SimpleFetch } from "./components/ReducerHooksFetch";
 
 class App extends Component {
   state = { posts: [] };
@@ -26,7 +27,8 @@ class App extends Component {
         {/* <Editable /> */}
         {/* <MobileDevice /> */}
         {/* <SimplexTubes /> */}
-        <Comment />
+        {/* <Comment /> */}
+        <SimpleFetch />
       </div>
     );
   }
