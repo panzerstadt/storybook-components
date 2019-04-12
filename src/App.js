@@ -10,6 +10,7 @@ import DynamicCursor from "./components/Cursors";
 import MobileDevice from "./components/MobileDeviceAPIs";
 import SimplexTubes from "./components/Animations/SimplexTubes";
 import { SimpleFetch } from "./components/ReducerHooksFetch";
+import { ObjectDetectionPoster } from "./components/VideoPoster";
 
 class App extends Component {
   state = { posts: [] };
@@ -28,7 +29,8 @@ class App extends Component {
         {/* <MobileDevice /> */}
         {/* <SimplexTubes /> */}
         {/* <Comment /> */}
-        <SimpleFetch />
+        {/* <SimpleFetch /> */}
+        <ObjectDetectionPoster />
       </div>
     );
   }
