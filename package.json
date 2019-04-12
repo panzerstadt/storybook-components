@@ -6,6 +6,7 @@
   "dependencies": {
     "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-info": "^5.0.6",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@tensorflow-models/posenet": "^1.0.0",
     "@tensorflow/tfjs": "^1.0.4",
     "@tensorflow/tfjs-vis": "^1.0.3",
@@ -47,7 +48,7 @@
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 9009 -s public",
     "copy-assets": "cp -r public/assets .out/static/assets",
-    "build-storybook": "build-storybook -c .storybook -o .out && yarn copy-assets",
+    "build-storybook": "build-storybook -c .storybook -o .out -s public",
     "deploy-storybook": "yarn build-storybook && gh-pages -d .out",
     "notes": "git add . && git commit -m 'component updates' && git push origin master",
     "update": "yarn deploy-storybook && yarn notes"

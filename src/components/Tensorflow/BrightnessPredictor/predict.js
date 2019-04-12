@@ -11,6 +11,7 @@ const loadModel = async () => {
   console.log(
     "INFO: model has to be places in public folder to be accessible."
   );
+
   return await tf.loadLayersModel(MODEL);
 };
 
