@@ -46,9 +46,9 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 9009 -s public",
-    "copy-assets": "cp -r public/assets .out/assets",
+    "copy-assets": "cp -r public/assets .out/static/assets",
     "build-storybook": "build-storybook -c .storybook -o .out && yarn copy-assets",
-    "deploy-storybook": "yarn build-storybook && gh-pages -d .out/static",
+    "deploy-storybook": "yarn build-storybook && gh-pages -d .out",
     "notes": "git add . && git commit -m 'component updates' && git push origin master",
     "update": "yarn deploy-storybook && yarn notes"
   },
