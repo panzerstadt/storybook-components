@@ -18,7 +18,6 @@
     "formik": "^1.5.1",
     "markdown-to-jsx": "^6.9.3",
     "material-icons-react": "^1.0.4",
-    "ml5": "^0.2.3",
     "paper": "^0.12.0",
     "react": "^16.8.4",
     "react-debounce-input": "^3.2.0",

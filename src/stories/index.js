@@ -7,7 +7,7 @@ import { withKnobs, select } from "@storybook/addon-knobs";
 
 import { Button, Welcome } from "@storybook/react/demo";
 import { FetchGhost } from "../components/Ghost";
-import VideoPoster, { ObjectDetectionPoster } from "../components/VideoPoster";
+import VideoPoster from "../components/VideoPoster";
 import FloorPlan from "../components/FloorPlan";
 import { Ticket } from "../components/CssGrid";
 import Posenet, { ReplayPosenet } from "../components/Posenet";
@@ -67,9 +67,8 @@ storiesOf("Test", module)
   .add("component", () => <Basic />)
   .add("hooks", () => <BasicHooks />);
 
-storiesOf("VideoPoster", module)
-  .add("Simple", () => <VideoPoster />)
-  .add("With Object Detection", () => <ObjectDetectionPoster />);
+storiesOf("VideoPoster", module).add("Simple", () => <VideoPoster />);
+//.add("With Object Detection", () => <ObjectDetectionPoster />);
 
 storiesOf("Floor Plan", module).add("Static", () => <FloorPlan />);
 
