@@ -11,6 +11,7 @@ import MobileDevice from "./components/MobileDeviceAPIs";
 import SimplexTubes from "./components/Animations/SimplexTubes";
 import { SimpleFetch } from "./components/ReducerHooksFetch";
 import { ObjectDetectionPoster } from "./components/VideoPoster";
+import CompVsHooks from "./components/componentsVsHooks";
 
 class App extends Component {
   state = { posts: [] };
@@ -30,7 +31,8 @@ class App extends Component {
         {/* <SimplexTubes /> */}
         {/* <Comment /> */}
         {/* <SimpleFetch /> */}
-        <ObjectDetectionPoster />
+        {/* <ObjectDetectionPoster /> */}
+        <CompVsHooks />
       </div>
     );
   }
