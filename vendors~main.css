@@ -13,6 +13,7 @@
   outline: none;
   position: absolute;
   top: 50%;
+  -webkit-transition: box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transition: box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out;
@@ -30,6 +31,7 @@
             transform: none; }
 
 .input-range__slider-container {
+  -webkit-transition: left 0.3s ease-out;
   transition: left 0.3s ease-out; }
 
 .input-range__label {
@@ -68,6 +70,7 @@
   display: block;
   height: 0.3rem;
   position: relative;
+  -webkit-transition: left 0.3s ease-out, width 0.3s ease-out;
   transition: left 0.3s ease-out, width 0.3s ease-out; }
   .input-range--disabled .input-range__track {
     background: #eeeeee; }

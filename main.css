@@ -1,5 +1,4 @@
 .fetchGhost_containerDiv__3IuKq {
-  display: -webkit-flex;
   display: flex;
   width: 100%;
   overflow-x: scroll;
@@ -8,12 +7,9 @@
 
 .fetchGhost_paginationDiv__2Sa7o {
   width: 100%;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: flex-end;
-          justify-content: flex-end;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .fetchGhost_pagebtn__NU51y {
@@ -52,6 +48,7 @@
 }
 
 .Gallery_postDivBorder__1JBxF {
+  -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
@@ -71,10 +68,8 @@
 }
 
 .Gallery_postDivPadding__3i-Hf {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
   height: calc(100% - 10px);
 }
@@ -104,28 +99,22 @@
   margin: 20px 10px;
   width: 100%;
   max-width: 800px;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Blog_postDivFull__2LtqX {
   min-height: 300px;
   width: 100%;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .Blog_postDivBorder__1UOvw {
+  -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
@@ -145,10 +134,8 @@
 }
 
 .Blog_postDivPadding__yWIiN {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
   height: calc(100% - 10px);
   padding: 20px;
@@ -191,12 +178,10 @@
 
 @media (min-width: 600px) {
   .Blog_postDiv__avk-o {
-    -webkit-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .Blog_flip__3ybeV {
-    -webkit-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
   .Blog_img__zf-0m {
     width: 300px;
@@ -233,23 +218,16 @@
   width: calc(100vh * 210 * var(--multiplier));
   background-color: #0000003b;
 
-  display: -webkit-flex;
-
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   pointer-events: none;
 }
 
 .Basic_posterBanner__JRBGy {
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50px;
 
@@ -310,154 +288,6 @@
   font-size: 1vh;
   font-weight: 500;
   line-height: 1.5;
-}
-
-.ObjectDetection_container__2G_Y8 {
-  position: relative;
-}
-
-.ObjectDetection_status__96mZ3 {
-  top: 30px;
-}
-
-.react-html5-camera-photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  z-index: -1;
-}
-
-.react-html5-camera-photo > video {
-  height: calc(100vh * 297 * var(--multiplier));
-  width: calc(100vh * 210 * var(--multiplier));
-  object-fit: cover;
-  -webkit-filter: grayscale() brightness(130%) contrast(1.4);
-          filter: grayscale() brightness(130%) contrast(1.4);
-}
-
-:root {
-  --multiplier: 0.0032;
-  --color: #fad706;
-}
-
-.FacePoster_posterFrame__GQaVb {
-  overflow: hidden;
-  position: relative;
-  height: calc(100vh * 297 * 0.0032);
-  height: calc(100vh * 297 * var(--multiplier));
-  width: calc(100vh * 210 * 0.0032);
-  width: calc(100vh * 210 * var(--multiplier));
-  background-color: #0000003b;
-
-  display: -webkit-flex;
-
-  display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  pointer-events: none;
-}
-
-.FacePoster_posterBanner__MKg5G {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-  width: 100%;
-  height: 50px;
-
-  background-color: #fad706;
-
-  background-color: var(--color);
-  word-wrap: normal;
-}
-
-.FacePoster_posterBanner__MKg5G > h2 {
-  word-wrap: normal;
-  font-family: "Roboto", serif;
-  font-weight: 700;
-
-  font-size: 1.3vh;
-  letter-spacing: 0.3rem;
-
-  margin: 0;
-  vertical-align: middle;
-}
-
-.FacePoster_contentDiv__27O3C {
-  position: absolute;
-  width: calc(100% - 10%);
-  top: 15%;
-  left: 10%;
-}
-
-.FacePoster_copyDiv__3pxBe {
-  height: 55vh;
-  /* height: 500px; */
-}
-
-.FacePoster_copyText__3YEql {
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-
-  font-size: 1.4rem;
-  font-size: 2vh;
-
-  font-family: "Roboto", serif;
-
-  color: #fad706;
-
-  color: var(--color);
-  line-height: 1.3;
-  letter-spacing: 0.3rem;
-
-  font-weight: 100;
-}
-
-.FacePoster_copySubText__a0ZzO {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: white;
-  font-size: 0.8rem;
-  font-size: 1vh;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.FacePoster_cameraBG__3wcqn {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  z-index: -1;
-}
-
-.FacePoster_cameraBG__3wcqn {
-  height: calc(100vh * 297 * 0.0032);
-  height: calc(100vh * 297 * var(--multiplier));
-  width: calc(100vh * 210 * 0.0032);
-  width: calc(100vh * 210 * var(--multiplier));
-  object-fit: cover;
-  -webkit-filter: grayscale() brightness(130%) contrast(1.4);
-          filter: grayscale() brightness(130%) contrast(1.4);
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
-}
-
-.FacePoster_debugFace__3zWI2 {
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 1px solid red;
 }
 
 body {
@@ -931,6 +761,23 @@ footer a .icons {
 
 .door-sliding {
   position: absolute;
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    color-stop(0, #096b72),
+    color-stop(8%, #096b72),
+    color-stop(8%, #fff),
+    color-stop(92%, #fff),
+    color-stop(92%, #096b72)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #096b72 0,
+    #096b72 8%,
+    #fff 8%,
+    #fff 92%,
+    #096b72 92%
+  );
   background: linear-gradient(
     to right,
     #096b72 0,
@@ -1080,6 +927,20 @@ footer a .icons {
   top: 0;
   height: 100%;
   border-right: 2px solid #096b72;
+  background: -webkit-repeating-linear-gradient(
+      left,
+      transparent,
+      transparent 6px,
+      rgba(9, 107, 114, 0.5) 6px,
+      rgba(9, 107, 114, 0.5) 8px
+    ),
+    -webkit-repeating-linear-gradient(
+      top,
+      transparent,
+      transparent 6px,
+      rgba(9, 107, 114, 0.5) 6px,
+      rgba(9, 107, 114, 0.5) 8px
+    );
   background: repeating-linear-gradient(
       to right,
       transparent,
@@ -1141,6 +1002,23 @@ footer a .icons {
   left: 50%;
   margin-left: -10px;
   border-radius: 40px 40px 0 0;
+  background: -webkit-gradient(
+    linear,
+    left top, left bottom,
+    color-stop(0, transparent),
+    color-stop(50%, transparent),
+    color-stop(50%, #096b72),
+    color-stop(60%, #096b72),
+    color-stop(60%, transparent)
+  );
+  background: -webkit-linear-gradient(
+    top,
+    transparent 0,
+    transparent 50%,
+    #096b72 50%,
+    #096b72 60%,
+    transparent 60%
+  );
   background: linear-gradient(
     to bottom,
     transparent 0,
@@ -1447,7 +1325,6 @@ footer a .Hogwarts_icons__7ZGeG {
   letter-spacing: 0.5px;
 }
 .Hogwarts_platform__1alE8 .Hogwarts_number__2A6EZ {
-  display: -webkit-flex;
   display: flex;
   margin-top: 12px;
   position: relative;
@@ -1532,6 +1409,247 @@ footer a .Hogwarts_icons__7ZGeG {
   grid-template-rows: 1fr min-content;
 }
 .Hogwarts_barcode__scan__3hH0P {
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    color-stop(2%, #333),
+    color-stop(4%, #333),
+    color-stop(4%, transparent),
+    color-stop(5%, transparent),
+    color-stop(5%, #333),
+    color-stop(6%, #333),
+    color-stop(6%, transparent),
+    color-stop(6%, #333),
+    color-stop(8%, #333),
+    color-stop(8%, transparent),
+    color-stop(9%, transparent),
+    color-stop(9%, #333),
+    color-stop(10.5%, #333),
+    color-stop(10.5%, transparent),
+    color-stop(11%, transparent),
+    color-stop(11%, #333),
+    color-stop(12%, #333),
+    color-stop(12%, transparent),
+    color-stop(13.5%, transparent),
+    color-stop(13.5%, #333),
+    color-stop(15%, #333),
+    color-stop(17%, #333),
+    color-stop(17%, transparent),
+    color-stop(19%, transparent),
+    color-stop(19%, #333),
+    color-stop(20%, #333),
+    color-stop(20%, transparent),
+    color-stop(21%, transparent),
+    color-stop(21%, #333),
+    color-stop(22%, #333),
+    color-stop(22%, transparent),
+    color-stop(23.5%, transparent),
+    color-stop(23.5%, #333),
+    color-stop(25%, #333),
+    color-stop(25%, transparent),
+    color-stop(26.5%, transparent),
+    color-stop(26.5%, #333),
+    color-stop(27.5%, #333),
+    color-stop(27.5%, transparent),
+    color-stop(28.5%, transparent),
+    color-stop(28.5%, #333),
+    color-stop(30%, #333),
+    color-stop(30%, transparent),
+    color-stop(32%, transparent),
+    color-stop(32%, #333),
+    color-stop(34%, #333),
+    color-stop(36%, #333),
+    color-stop(36%, transparent),
+    color-stop(37.5%, transparent),
+    color-stop(37.5%, #333),
+    color-stop(40%, #333),
+    color-stop(40%, transparent),
+    color-stop(41.5%, transparent),
+    color-stop(41.5%, #333),
+    color-stop(43%, #333),
+    color-stop(43%, transparent),
+    color-stop(46%, transparent),
+    color-stop(46%, #333),
+    color-stop(48%, #333),
+    color-stop(48%, transparent),
+    color-stop(49%, transparent),
+    color-stop(49%, #333),
+    color-stop(49%, transparent),
+    color-stop(50%, transparent),
+    color-stop(50%, #333),
+    color-stop(51%, #333),
+    color-stop(51%, transparent),
+    color-stop(53%, transparent),
+    color-stop(53%, #333),
+    color-stop(54.5%, #333),
+    color-stop(54.5%, transparent),
+    color-stop(56%, transparent),
+    color-stop(56%, #333),
+    color-stop(58%, #333),
+    color-stop(58%, transparent),
+    color-stop(59%, transparent),
+    color-stop(59%, #333),
+    color-stop(60%, #333),
+    color-stop(62.5%, #333),
+    color-stop(62.5%, transparent),
+    color-stop(64%, transparent),
+    color-stop(64%, #333),
+    color-stop(64%, #333),
+    color-stop(67%, #333),
+    color-stop(67%, transparent),
+    color-stop(69%, transparent),
+    color-stop(69%, #333),
+    color-stop(70%, #333),
+    color-stop(70%, transparent),
+    color-stop(71%, transparent),
+    color-stop(71%, #333),
+    color-stop(72%, #333),
+    color-stop(72%, transparent),
+    color-stop(73.5%, transparent),
+    color-stop(73.5%, #333),
+    color-stop(76%, #333),
+    color-stop(76%, transparent),
+    color-stop(79%, transparent),
+    color-stop(79%, #333),
+    color-stop(80%, #333),
+    color-stop(80%, transparent),
+    color-stop(82%, transparent),
+    color-stop(82%, #333),
+    color-stop(82.5%, #333),
+    color-stop(82.5%, transparent),
+    color-stop(84%, transparent),
+    color-stop(84%, #333),
+    color-stop(87%, #333),
+    color-stop(87%, transparent),
+    color-stop(89%, transparent),
+    color-stop(89%, #333),
+    color-stop(91%, #333),
+    color-stop(91%, transparent),
+    color-stop(92%, transparent),
+    color-stop(92%, #333),
+    color-stop(95%, #333),
+    color-stop(95%, transparent)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #333 2%,
+    #333 4%,
+    transparent 4%,
+    transparent 5%,
+    #333 5%,
+    #333 6%,
+    transparent 6%,
+    #333 6%,
+    #333 8%,
+    transparent 8%,
+    transparent 9%,
+    #333 9%,
+    #333 10.5%,
+    transparent 10.5%,
+    transparent 11%,
+    #333 11%,
+    #333 12%,
+    transparent 12%,
+    transparent 13.5%,
+    #333 13.5%,
+    #333 15%,
+    #333 17%,
+    transparent 17%,
+    transparent 19%,
+    #333 19%,
+    #333 20%,
+    transparent 20%,
+    transparent 21%,
+    #333 21%,
+    #333 22%,
+    transparent 22%,
+    transparent 23.5%,
+    #333 23.5%,
+    #333 25%,
+    transparent 25%,
+    transparent 26.5%,
+    #333 26.5%,
+    #333 27.5%,
+    transparent 27.5%,
+    transparent 28.5%,
+    #333 28.5%,
+    #333 30%,
+    transparent 30%,
+    transparent 32%,
+    #333 32%,
+    #333 34%,
+    #333 36%,
+    transparent 36%,
+    transparent 37.5%,
+    #333 37.5%,
+    #333 40%,
+    transparent 40%,
+    transparent 41.5%,
+    #333 41.5%,
+    #333 43%,
+    transparent 43%,
+    transparent 46%,
+    #333 46%,
+    #333 48%,
+    transparent 48%,
+    transparent 49%,
+    #333 49%,
+    transparent 49%,
+    transparent 50%,
+    #333 50%,
+    #333 51%,
+    transparent 51%,
+    transparent 53%,
+    #333 53%,
+    #333 54.5%,
+    transparent 54.5%,
+    transparent 56%,
+    #333 56%,
+    #333 58%,
+    transparent 58%,
+    transparent 59%,
+    #333 59%,
+    #333 60%,
+    #333 62.5%,
+    transparent 62.5%,
+    transparent 64%,
+    #333 64%,
+    #333 64%,
+    #333 67%,
+    transparent 67%,
+    transparent 69%,
+    #333 69%,
+    #333 70%,
+    transparent 70%,
+    transparent 71%,
+    #333 71%,
+    #333 72%,
+    transparent 72%,
+    transparent 73.5%,
+    #333 73.5%,
+    #333 76%,
+    transparent 76%,
+    transparent 79%,
+    #333 79%,
+    #333 80%,
+    transparent 80%,
+    transparent 82%,
+    #333 82%,
+    #333 82.5%,
+    transparent 82.5%,
+    transparent 84%,
+    #333 84%,
+    #333 87%,
+    transparent 87%,
+    transparent 89%,
+    #333 89%,
+    #333 91%,
+    transparent 91%,
+    transparent 92%,
+    #333 92%,
+    #333 95%,
+    transparent 95%
+  );
   background: linear-gradient(
     to right,
     #333 2%,
@@ -1737,14 +1855,10 @@ footer a .Hogwarts_icons__7ZGeG {
   height: 100%;
   width: 100%;
   background-color: #ffe7c733;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
 }
 
@@ -1755,12 +1869,9 @@ footer a .Hogwarts_icons__7ZGeG {
 }
 
 .Posenet_download__EqDpI {
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   min-height: 50px;
   width: 100%;
   color: white;
@@ -1820,12 +1931,9 @@ footer a .Hogwarts_icons__7ZGeG {
 .Posenet_posenet__3l4Ls {
   position: relative;
   z-index: -1;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .Posenet_scores__1D0yV {
@@ -1835,6 +1943,7 @@ footer a .Hogwarts_icons__7ZGeG {
 }
 
 .Posenet_s__3ulFh {
+  -webkit-transition: opacity 2000ms ease;
   transition: opacity 2000ms ease;
   font-weight: 800;
   font-size: 80px;
@@ -1859,13 +1968,9 @@ footer a .Hogwarts_icons__7ZGeG {
   width: 100%;
   min-height: 100px;
 
-  display: -webkit-flex;
-
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 
   /* background-color: #ffffff00;
     transition: background-color 300ms cubic-bezier(0.175, 0.885, 0.32, 1.675); */
@@ -1889,6 +1994,7 @@ footer a .Hogwarts_icons__7ZGeG {
 
 /* the main track */
 .input-range__track {
+  -webkit-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   background-color: rgba(250, 128, 114, 0.1);
   height: 1.5rem;
@@ -1920,6 +2026,7 @@ footer a .Hogwarts_icons__7ZGeG {
 
 /* the knobs */
 .input-range__slider {
+  -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
   background-color: rgb(255, 149, 79);
   border: none;
@@ -2024,27 +2131,21 @@ input:focus {
 }
 
 .AppleTheme_inputBar__3FIRC {
-  display: -webkit-flex;
   display: flex;
   width: 100%;
   margin-bottom: 10px;
 }
 
 .AppleTheme_inputContainer__1qHUi {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 600px) {
   .AppleTheme_inputContainer__1qHUi {
-    -webkit-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .AppleTheme_inputBar__3FIRC {
     margin-bottom: 0;
@@ -2090,6 +2191,7 @@ button {
 }
 
 .AppleTheme_reset__3wi5X {
+  -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   border-radius: 100%;
   background-color: transparent;
@@ -2200,27 +2302,21 @@ input:focus {
 }
 
 .Email_inputBar__3hIQG {
-  display: -webkit-flex;
   display: flex;
   width: 100%;
   margin-bottom: 10px;
 }
 
 .Email_inputContainer__3Jaab {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 600px) {
   .Email_inputContainer__3Jaab {
-    -webkit-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .Email_inputBar__3hIQG {
     margin-bottom: 0;
@@ -2266,6 +2362,7 @@ button {
 }
 
 .Email_reset__2YwEl {
+  -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   border-radius: 100%;
   background-color: transparent;
@@ -2376,10 +2473,8 @@ input:focus {
 }
 
 .Generic_inputBar__3hLKA {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -2389,14 +2484,10 @@ input:focus {
 }
 
 .Generic_inputContainer__9GL-J {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button:disabled {
@@ -2413,7 +2504,6 @@ button {
 }
 
 .Generic_btnContainer__3ZpBc {
-  display: -webkit-flex;
   display: flex;
 }
 
@@ -2443,6 +2533,7 @@ button {
 }
 
 .Generic_reset__2unCJ {
+  -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   border-radius: 100%;
   background-color: transparent;
@@ -2553,10 +2644,8 @@ input:focus {
 }
 
 .Login_inputBar__3yMFg {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -2566,14 +2655,10 @@ input:focus {
 }
 
 .Login_inputContainer__3DHlc {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 600px) {
@@ -2621,6 +2706,7 @@ button {
 }
 
 .Login_reset__3Ijw7 {
+  -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   border-radius: 100%;
   background-color: transparent;
@@ -2661,12 +2747,9 @@ button {
 
 .ReactWindow_gridItemEven__1gO3-,
 .ReactWindow_gridItemOdd__1eIno {
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .ReactWindow_gridItemEven__1gO3- {
@@ -2675,12 +2758,9 @@ button {
 
 .ReactWindow_gridRowHeader__xyVr9 {
   overflow: hidden;
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(250, 250, 250);
   border-bottom: 1px solid lightgrey;
 }
@@ -2694,12 +2774,9 @@ button {
 
 .ReactWindow_gridColHeader__1tmdJ {
   overflow: hidden;
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   border-right: 1px solid lightgrey;
 }
@@ -2718,14 +2795,10 @@ button {
   box-sizing: border-box;
 
   padding: 8px;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .CommentBox_commentBox__259FB a {
@@ -2773,7 +2846,6 @@ button {
 
 /*main*/
 .Comment_comment__1iY7T {
-  display: -webkit-flex;
   display: flex;
   text-align: left;
 
@@ -2819,8 +2891,7 @@ button {
 /*right*/
 
 #Comment_right__2sPTt {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 #Comment_right__2sPTt .Comment_minimize__Bpnj_ {
@@ -2890,10 +2961,8 @@ button {
 }
 
 .Rating_rating__1-wRS {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-right: 12px;
 }
 
@@ -2959,10 +3028,8 @@ button {
 }
 
 .Reply_reply__1_Yt- .Reply_panel__1evr6 {
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
   background: #3d4953;
   padding: 8px;
 }
@@ -3000,6 +3067,7 @@ button {
   border: none;
   border-radius: 4px;
   background: #4f9eed;
+  -webkit-transition: 0.1s ease 0s;
   transition: 0.1s ease 0s;
 
   outline: none;
@@ -3108,13 +3176,9 @@ button {
   width: 100%;
   height: 45px;
 
-  display: -webkit-flex;
-
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .Cursors_tutorial__3TSnE {
@@ -3131,25 +3195,19 @@ button {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .Cursors_page__inner__3P4CC {
   position: relative;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
 }
 
 .Cursors_nav__3xh3l {
   z-index: 2000;
-  display: -webkit-flex;
   display: flex;
   position: absolute;
   left: 50%;
@@ -3254,15 +3312,12 @@ button {
 }
 
 .Settings_link__1_joV {
-  display: -webkit-flex;
   display: flex;
   width: 75px;
   height: 75px;
   margin: 0 5px;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 
   border: 1px dashed rgb(58, 58, 58);
 }
@@ -3270,6 +3325,7 @@ button {
 .Settings_link__1_joV * {
   stroke: white;
   stroke-width: 5px;
+  -webkit-transition: all 0.2s ease 0.05s;
   transition: all 0.2s ease 0.05s;
 }
 
@@ -3298,15 +3354,12 @@ button {
 }
 
 .Circle_link__2QTJD {
-  display: -webkit-flex;
   display: flex;
   width: 75px;
   height: 75px;
   margin: 0 5px;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 
   border: 1px dashed rgb(58, 58, 58);
 }
@@ -3315,6 +3368,8 @@ button {
   display: block;
   height: 20px;
   width: 20px;
+
+  -webkit-transition: border 100ms linear;
 
   transition: border 100ms linear;
   border: 2px solid white;
@@ -3326,15 +3381,12 @@ button {
 }
 
 .Hamburger_link__1YHtK {
-  display: -webkit-flex;
   display: flex;
   width: 75px;
   height: 75px;
   margin: 0 5px;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 
   border: 1px dashed rgb(58, 58, 58);
 }
@@ -3342,6 +3394,7 @@ button {
 .Hamburger_link__1YHtK * {
   stroke: white;
   stroke-width: 5px;
+  -webkit-transition: all 0.2s ease 0.05s;
   transition: all 0.2s ease 0.05s;
 }
 
@@ -3368,7 +3421,6 @@ button {
 
 .Gallery_gallery__2Dg7X {
   width: 100%;
-  display: -webkit-flex;
   display: flex;
   overflow-x: auto;
 }
