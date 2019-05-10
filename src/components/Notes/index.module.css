@@ -1,0 +1,67 @@
+:root {
+  --modal-margin: 150px;
+}
+
+.temp {
+  height: 100px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.popup {
+  padding: 20px;
+  border: 1px solid rgb(158, 158, 158);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.774);
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.185);
+  pointer-events: all;
+}
+
+.noteContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 600px;
+}
+
+.noteCanvas {
+  border: 1px solid red;
+}
+
+.textArray {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+
+.textArrayText {
+  border: 1px solid rgb(235, 235, 235);
+  margin-right: 7px;
+
+  background-color: rgb(235, 235, 235);
+  line-height: 2rem;
+  padding: 3px 5px;
+}
+
+.textArrayText:hover {
+  border: 1px dashed rgb(235, 235, 235);
+  background-color: white;
+  cursor: grab;
+}
