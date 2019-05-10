@@ -1,6 +1,10 @@
 // this is meant to be a modal
 import React, { useState } from "react";
 import withDnDContext from "./components/withDnDContext";
+import DrawableCanvas from "./components/DrawableCanvas";
+
+// demo
+import Fetch from "../ReducerHooksFetch";
 
 import { moveText } from "./components/Manager";
 import Target from "./components/Target";
@@ -20,12 +24,11 @@ const Modal = ({ children }) => {
 
 const Notes = () => {
   const [singleInput, setSingleInput] = useState("");
-  const [textArray, setTextArray] = useState([]);
-
   const handleSingleInput = e => {
     setSingleInput(e.target.value);
   };
 
+  const [textArray, setTextArray] = useState([]);
   const handleTextArray = e => {
     if (e.key === "Enter") {
       setTextArray([...textArray, singleInput]);
@@ -40,20 +43,38 @@ const Notes = () => {
     }
   };
 
+  const renderText = (text, i) => {
+    return (
+      <p key={`${text}-canvas-i`} style={{ margin: 3 }}>
+        {text}
+      </p>
+    );
+  };
+
+  const [dragging, setDragging] = useState();
+  const [cDragging, setCDragging] = useState();
+  const [canvasObjectList, setCanvasObjectList] = useState([]);
+  const handleTagDrop = v => {
+    // receive a report on which stuff went where
+
+    // decide what to do with those two items
+    // 1. take out item from array
+    const itemIndex = v.from.textArrayIndex;
+    let tempArray = textArray;
+    const draggedItem = tempArray.splice(itemIndex, 1);
+    // 2. put item into new area
+    setCanvasObjectList(p => [...p, draggedItem]);
+    setTextArray(tempArray);
+
+    console.log(draggedItem);
+    console.log(v);
+    // setDragging(v);
+  };
+
   const handleClick = e => {
     console.log(e.currentTarget);
     const txt = textArray.slice(-1);
     moveText(txt, e.currentTarget);
-  };
-
-  const renderText = text => {
-    return <p>{text}</p>;
-  };
-
-  const [dragging, setDragging] = useState();
-  const handleTagDragging = v => {
-    console.log(v);
-    setDragging(v);
   };
 
   return (
@@ -62,10 +83,12 @@ const Notes = () => {
       <Icon className={styles.editIcon} height={50} width={50} />
       <div className={styles.textArray}>
         {textArray.map((v, i) => (
-          <Draggable onDrag={handleTagDragging}>
-            <span key={`${v}-${i}`} className={styles.textArrayText}>
-              {v}
-            </span>
+          <Draggable
+            key={`${v}-${i}`}
+            textArrayIndex={i}
+            onDragEnd={handleTagDrop}
+          >
+            <span className={styles.textArrayText}>{v}</span>
           </Draggable>
         ))}
       </div>
@@ -76,13 +99,25 @@ const Notes = () => {
         placeholder="text here"
         value={singleInput}
       />
-      <Target>
-        <div className={styles.temp} onClick={handleClick}>
-          click to stick stuff here
-          {renderText("test")}
+
+      <Target className={styles.targetContainer}>
+        <div
+          className={styles.targetContainerText}
+          //onClick={handleClick}
+        >
+          {canvasObjectList.map((v, i) => renderText(v, i))}
+        </div>
+        <div className={styles.targetContainerCanvas}>
+          <DrawableCanvas
+            brushColor="#0B2027"
+            lineWidth={4}
+            canvasStyle={{ backgroundColor: "lightgrey" }}
+            // clear={this.state.clear}
+            // submitBtn={this.state.makePred}
+            // submit={this.submitImage}
+          />
         </div>
       </Target>
-      <canvas className={styles.noteCanvas} />
     </div>
   );
 };
@@ -101,6 +136,7 @@ const MiniApp = () => {
           <Notes />
         </Modal>
       </div>
+      <Fetch />
     </>
   );
 };
