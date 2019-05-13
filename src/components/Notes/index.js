@@ -1,18 +1,21 @@
 // this is meant to be a modal
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import withDnDContext from "./components/withDnDContext";
-import DrawableCanvas from "./components/DrawableCanvas";
+import SignatureCanvas from "./components/canvases/SignatureCanvas";
 
 // demo
-import Fetch from "../ReducerHooksFetch";
+import Fetch from "./components/DummyFetch";
 
-import { moveText } from "./components/Manager";
-import Target from "./components/Target";
-import Draggable from "./components/Draggable";
+import Target from "./components/atoms/Target";
+import Draggable from "./components/atoms/Draggable";
+import URLWindow from "./components/URLWindow";
+import DraggableTextDiv from "./components/DraggableTextDiv";
+import DraggableTextList from "./components/DraggableTextList";
 
 import styles from "./index.module.css";
 
 import { ReactComponent as Icon } from "./assets/notes.svg";
+
 // popup modal
 const Modal = ({ children }) => {
   return (
@@ -22,33 +25,10 @@ const Modal = ({ children }) => {
   );
 };
 
-const Notes = () => {
-  const [singleInput, setSingleInput] = useState("");
-  const handleSingleInput = e => {
-    setSingleInput(e.target.value);
-  };
-
-  const [textArray, setTextArray] = useState([]);
-  const handleTextArray = e => {
-    if (e.key === "Enter") {
-      setTextArray([...textArray, singleInput]);
-      setSingleInput("");
-      e.preventDefault();
-    } else if (e.key === "Backspace" && singleInput.length === 0) {
-      let tempArray = textArray;
-      const last = tempArray.pop();
-      setTextArray(tempArray);
-      setSingleInput(last); // put that last array back into input
-      e.preventDefault(); // prevent extra backspace on text
-    }
-  };
-
-  const renderText = (text, i) => {
-    return (
-      <p key={`${text}-canvas-i`} style={{ margin: 3 }}>
-        {text}
-      </p>
-    );
+const Notes = ({ isShowing }) => {
+  const [textArray, setTextArray] = useState(["move this!"]);
+  const handleTextArrayUpdate = v => {
+    setTextArray(v);
   };
 
   const [dragging, setDragging] = useState();
@@ -56,66 +36,80 @@ const Notes = () => {
   const [canvasObjectList, setCanvasObjectList] = useState([]);
   const handleTagDrop = v => {
     // receive a report on which stuff went where
+    const from = v.from;
+    const to = v.to;
+
+    // currently only allow drop to one object
+    if (!to || to.name !== "textContainer") {
+      return;
+    }
 
     // decide what to do with those two items
+
+    // -------
     // 1. take out item from array
     const itemIndex = v.from.textArrayIndex;
-    let tempArray = textArray;
+    let tempArray = Array.from(textArray);
+    console.log("tempArray: ", tempArray);
     const draggedItem = tempArray.splice(itemIndex, 1);
-    // 2. put item into new area
-    setCanvasObjectList(p => [...p, draggedItem]);
-    setTextArray(tempArray);
 
-    console.log(draggedItem);
-    console.log(v);
-    // setDragging(v);
+    // move
+    if (to.dropEffect === "move") {
+      console.log("moving", draggedItem);
+
+      setTextArray(tempArray);
+      // if !move, do nothing to text array
+    } else {
+      console.log("copying", draggedItem);
+    }
+
+    // 2. put item into new area
+    setCanvasObjectList(p => [
+      ...p,
+      { item: draggedItem, pos: to.delta, itemIndex: itemIndex }
+    ]);
   };
 
-  const handleClick = e => {
-    console.log(e.currentTarget);
-    const txt = textArray.slice(-1);
-    moveText(txt, e.currentTarget);
+  const [isCanvasDrawing, setIsCanvasDrawing] = useState(false);
+  const [clearCanvas, setClearCanvas] = useState(false);
+  const handleClearCanvas = () => {
+    setClearCanvas(p => !p);
+    setTimeout(() => {
+      setClearCanvas(p => !p);
+    }, 1000);
   };
 
   return (
     <div className={styles.noteContainer}>
       {dragging}
       <Icon className={styles.editIcon} height={50} width={50} />
-      <div className={styles.textArray}>
-        {textArray.map((v, i) => (
-          <Draggable
-            key={`${v}-${i}`}
-            textArrayIndex={i}
-            onDragEnd={handleTagDrop}
-          >
-            <span className={styles.textArrayText}>{v}</span>
-          </Draggable>
-        ))}
-      </div>
-      <input
-        className={styles.noteText}
-        onChange={handleSingleInput}
-        onKeyDown={handleTextArray}
-        placeholder="text here"
-        value={singleInput}
-      />
 
       <Target className={styles.targetContainer}>
-        <div
-          className={styles.targetContainerText}
-          //onClick={handleClick}
-        >
-          {canvasObjectList.map((v, i) => renderText(v, i))}
-        </div>
+        <DraggableTextList
+          textArray={textArray}
+          onTextArrayUpdate={handleTextArrayUpdate}
+          onDragEnd={handleTagDrop}
+        />
+        <DraggableTextDiv boxes={canvasObjectList} />
+
         <div className={styles.targetContainerCanvas}>
-          <DrawableCanvas
-            brushColor="#0B2027"
-            lineWidth={4}
-            canvasStyle={{ backgroundColor: "lightgrey" }}
-            // clear={this.state.clear}
+          <SignatureCanvas
+            penColor="#0B2027"
+            backgroundColor="transparent"
+            clear={clearCanvas}
+            width={600}
+            height={300}
+            onBegin={() => setIsCanvasDrawing(true)}
+            onEnd={() => setIsCanvasDrawing(false)}
             // submitBtn={this.state.makePred}
             // submit={this.submitImage}
           />
+          <button
+            className={styles.targetContainerCanvasClearBtn}
+            onClick={handleClearCanvas}
+          >
+            clear
+          </button>
         </div>
       </Target>
     </div>
@@ -125,6 +119,13 @@ const Notes = () => {
 const MiniApp = () => {
   const [toggle, setToggle] = useState(true);
 
+  const [previewURL, setPreviewURL] = useState("");
+
+  const handleURL = e => {
+    setPreviewURL(e);
+    setToggle(true);
+  };
+
   return (
     <>
       <br />
@@ -133,10 +134,20 @@ const MiniApp = () => {
       </button>
       <div style={{ display: toggle ? "block" : "none" }}>
         <Modal>
-          <Notes />
+          <button onClick={() => setToggle(!toggle)}>
+            close editable notes popup
+          </button>
+          <Notes isShowing={toggle} />
+          <br />
+          <a href={previewURL} target="_blank" rel="noreferrer noopener">
+            {previewURL}
+          </a>
+          <br />
+          <br />
+          <URLWindow url={previewURL} />
         </Modal>
       </div>
-      <Fetch />
+      <Fetch onClick={handleURL} />
     </>
   );
 };

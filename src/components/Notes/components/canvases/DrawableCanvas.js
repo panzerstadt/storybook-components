@@ -7,20 +7,9 @@ import assign from "object-assign";
 
 let mousePressed = false;
 class DrawableCanvas extends React.Component {
+  handleSetupCanvas = this.handleSetupCanvas.bind(this);
   componentDidMount() {
-    const canvas = ReactDOM.findDOMNode(this);
-
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
-    const context = canvas.getContext("2d");
-
-    this.setState({
-      canvas,
-      context
-    });
+    this.handleSetupCanvas();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,6 +30,22 @@ class DrawableCanvas extends React.Component {
       },
       clear: false
     };
+  }
+
+  handleSetupCanvas() {
+    const canvas = ReactDOM.findDOMNode(this);
+
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    const context = canvas.getContext("2d");
+
+    this.setState({
+      canvas,
+      context
+    });
   }
 
   handleOnTouchStart(e) {

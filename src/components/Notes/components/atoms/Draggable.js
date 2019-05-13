@@ -1,5 +1,5 @@
-import React from "react";
-import { ItemTypes } from "../constants";
+import React, { useRef } from "react";
+import { ItemTypes } from "../../constants";
 import { DragSource } from "react-dnd";
 
 const DraggableComponent = ({
@@ -8,15 +8,15 @@ const DraggableComponent = ({
   onDrag,
   children
 }) => {
+  const dragRef = useRef();
   return (
     <div
       ref={connectDragSource}
       style={{
-        outline: isDragging ? "1px solid red" : "none",
-        outlineOffset: -0.5
+        opacity: isDragging ? 0.4 : 1
       }}
     >
-      {children || "draggable!"}
+      <div ref={dragRef}>{children || "draggable!"}</div>
     </div>
   );
 };

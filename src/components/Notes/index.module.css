@@ -1,5 +1,6 @@
 :root {
   --modal-margin: 150px;
+  --popup-min-width: 600px;
 }
 
 .modal {
@@ -19,22 +20,30 @@
   padding: 20px;
   border: 1px solid rgb(158, 158, 158);
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.774);
+  background-color: rgb(255, 255, 255);
   box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.185);
   pointer-events: all;
+  width: 80%;
+  height: 90%;
+  max-width: var(--popup-min-width);
+  overflow: scroll;
 }
 
 .noteContainer {
   display: flex;
   flex-direction: column;
   text-align: left;
-  max-width: 600px;
 }
 
-.targetContainerCanvas {
-  height: 200px;
+.targetContainer {
+  pointer-events: none;
+  position: relative;
+  height: 300px;
   width: 100%;
-  background-color: rgba(4, 0, 255, 0.13);
+  overflow: hidden;
+
+  /* outline: 1px solid lightgrey;
+  outline-offset: -1px; */
 }
 
 .targetContainerText {
@@ -47,7 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 0, 0, 0.103);
+  /* background-color: rgba(255, 0, 0, 0.103); */
   pointer-events: none;
 }
 
@@ -55,29 +64,20 @@
   pointer-events: all;
 }
 
-.targetContainer {
-  position: relative;
+.targetContainerCanvas {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: var(--popup-min-width);
+
+  background-color: rgb(248, 248, 248);
+  pointer-events: all;
 }
 
-.textArray {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 1rem 0;
-}
-
-.textArrayText {
-  border: 1px solid rgb(235, 235, 235);
-  margin-right: 7px;
-
-  background-color: rgb(235, 235, 235);
-  line-height: 2rem;
-  padding: 3px 5px;
-}
-
-.textArrayText:hover {
-  border: 1px dashed rgb(235, 235, 235);
-  background-color: white;
-  cursor: grab;
+.targetContainerCanvasClearBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }

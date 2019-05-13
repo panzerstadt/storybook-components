@@ -27,6 +27,7 @@ import {
   BrightnessTrainer,
   BrightnessDataCollector
 } from "../components/Tensorflow";
+import Notes from "../components/Notes";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -118,3 +119,5 @@ storiesOf("ML - Tensorflow", module)
   .add("Brightness Data Collector", () => <BrightnessDataCollector />)
   .add("Brightness Predictor", () => <BrightnessPredictor />)
   .add("Brightness Trainer", () => <BrightnessTrainer />);
+
+storiesOf("Custom Notepad", module).add("basic", () => <Notes />);

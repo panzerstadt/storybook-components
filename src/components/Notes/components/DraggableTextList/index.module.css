@@ -1,0 +1,45 @@
+.textArrayContainer {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.textArray {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* margin: 1rem 0; */
+}
+
+.textArrayInput {
+  outline: none;
+  background-color: transparent;
+  pointer-events: all;
+  border: 1px solid rgba(235, 235, 235, 0);
+  margin-right: 7px;
+  font-size: 15px;
+
+  line-height: 1.6rem;
+  padding: 2px 5px 2px 0;
+}
+
+.textArrayText {
+  pointer-events: all;
+  border: 1px solid rgba(235, 235, 235, 0);
+  margin-right: 7px;
+
+  line-height: 1.6rem;
+  padding: 2px 5px 2px 0;
+}
+
+.textArrayText:hover {
+  border: 1px dashed rgb(235, 235, 235);
+  cursor: grab;
+  /* listen to keydown, when keydown is option, switch css class */
+  /* https://stackoverflow.com/questions/28520466/change-style-on-hover-while-a-key-is-held-down */
+}
