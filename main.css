@@ -3431,5 +3431,213 @@ button {
   object-fit: cover;
 }
 
+.DummyFetch_input__1UEJU {
+  height: 50px;
+  font-size: 20px;
+  padding-left: 20px;
+  /* width: calc(100% - 20px); */
+  border: none;
+  outline: 1px dashed black;
+  outline-offset: -2px;
+  margin-bottom: 15px;
+}
+
+.DummyFetch_input__1UEJU:focus {
+  outline: none;
+}
+
+.DummyFetch_submit__3mi_D {
+  box-shadow: 1px 2px 12px lightgrey;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.DummyFetch_submit__3mi_D:hover {
+  background-color: white;
+  color: black;
+}
+
+.DummyFetch_submit__3mi_D:focus {
+  outline: none;
+}
+
+.DummyFetch_loadingOrError__2DdGW {
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.URLWindow_webpageContainer__2KFRD {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.URLWindow_loadingContainer__Q8pPp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.507);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.URLWindow_loading__1C9Qj {
+  height: 50px;
+  width: 50px;
+}
+
+.DraggableTextDiv_draggableTextContainer__3Iug0 {
+  position: relative;
+  z-index: 10;
+}
+
+.DraggableTextList_textArrayContainer__EcAQW {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.DraggableTextList_textArray__2HC2p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* margin: 1rem 0; */
+}
+
+.DraggableTextList_textArrayInput___Hh-5 {
+  outline: none;
+  background-color: transparent;
+  pointer-events: all;
+  border: 1px solid rgba(235, 235, 235, 0);
+  margin-right: 7px;
+  font-size: 15px;
+
+  line-height: 1.6rem;
+  padding: 2px 5px 2px 0;
+}
+
+.DraggableTextList_textArrayText__3jypL {
+  pointer-events: all;
+  border: 1px solid rgba(235, 235, 235, 0);
+  margin-right: 7px;
+
+  line-height: 1.6rem;
+  padding: 2px 5px 2px 0;
+}
+
+.DraggableTextList_textArrayText__3jypL:hover {
+  border: 1px dashed rgb(235, 235, 235);
+  cursor: -webkit-grab;
+  cursor: grab;
+  /* listen to keydown, when keydown is option, switch css class */
+  /* https://stackoverflow.com/questions/28520466/change-style-on-hover-while-a-key-is-held-down */
+}
+
+:root {
+  --modal-margin: 150px;
+  --popup-min-width: 600px;
+}
+
+.Notes_modal__3UQxq {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.Notes_popup__1jWTX {
+  padding: 20px;
+  border: 1px solid rgb(158, 158, 158);
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.185);
+  pointer-events: all;
+  width: 80%;
+  height: 90%;
+  max-width: 600px;
+  max-width: var(--popup-min-width);
+  overflow: scroll;
+}
+
+.Notes_noteContainer__FKr9B {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.Notes_targetContainer__30kBh {
+  pointer-events: none;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+
+  /* outline: 1px solid lightgrey;
+  outline-offset: -1px; */
+}
+
+.Notes_targetContainerText__1JTaA {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 0, 0, 0.103); */
+  pointer-events: none;
+}
+
+.Notes_targetContainerText__1JTaA > .Notes_canvasText__u1Sep {
+  pointer-events: all;
+}
+
+.Notes_targetContainerCanvas__3CPgs {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 600px;
+  width: var(--popup-min-width);
+
+  background-color: rgb(248, 248, 248);
+  pointer-events: all;
+}
+
+.Notes_targetContainerCanvasClearBtn__2emie {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
 
 /*# sourceMappingURL=main.css.map*/

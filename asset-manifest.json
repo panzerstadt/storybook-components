@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/storybook-components/main.css",
-    "main.js": "/storybook-components/main.2a7d6919e5c8041afddb.bundle.js",
+    "main.js": "/storybook-components/main.8be63888299fbf84378d.bundle.js",
     "main.css.map": "/storybook-components/main.css.map",
-    "main.js.map": "/storybook-components/main.2a7d6919e5c8041afddb.bundle.js.map",
-    "runtime~main.js": "/storybook-components/runtime~main.2a7d6919e5c8041afddb.bundle.js",
-    "runtime~main.js.map": "/storybook-components/runtime~main.2a7d6919e5c8041afddb.bundle.js.map",
+    "main.js.map": "/storybook-components/main.8be63888299fbf84378d.bundle.js.map",
+    "runtime~main.js": "/storybook-components/runtime~main.8be63888299fbf84378d.bundle.js",
+    "runtime~main.js.map": "/storybook-components/runtime~main.8be63888299fbf84378d.bundle.js.map",
     "vendors~main.css": "/storybook-components/vendors~main.css",
-    "vendors~main.js": "/storybook-components/vendors~main.2a7d6919e5c8041afddb.bundle.js",
+    "vendors~main.js": "/storybook-components/vendors~main.8be63888299fbf84378d.bundle.js",
     "vendors~main.css.map": "/storybook-components/vendors~main.css.map",
-    "vendors~main.js.map": "/storybook-components/vendors~main.2a7d6919e5c8041afddb.bundle.js.map",
+    "vendors~main.js.map": "/storybook-components/vendors~main.8be63888299fbf84378d.bundle.js.map",
     "iframe.html": "/storybook-components/iframe.html",
-    "precache-manifest.0705456405caeaf5cabbff8fd938b47b.js": "/storybook-components/precache-manifest.0705456405caeaf5cabbff8fd938b47b.js",
+    "precache-manifest.8a8d0819a3b5c4449a34d14f66867cfa.js": "/storybook-components/precache-manifest.8a8d0819a3b5c4449a34d14f66867cfa.js",
     "service-worker.js": "/storybook-components/service-worker.js",
     "static/media/copy.png": "/storybook-components/static/media/copy.98966ecb.png",
+    "static/media/duration.svg": "/storybook-components/static/media/duration.54f24051.svg",
     "static/media/error.svg": "/storybook-components/static/media/error.136b1931.svg",
+    "static/media/notes.336b5339.svg": "/storybook-components/static/media/notes.336b5339.svg",
     "static/media/success.svg": "/storybook-components/static/media/success.dc325e00.svg"
   }
 }
