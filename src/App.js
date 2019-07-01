@@ -12,11 +12,12 @@ import SimplexTubes from "./components/Animations/SimplexTubes";
 import { SimpleFetch } from "./components/ReducerHooksFetch";
 import { ObjectDetectionPoster } from "./components/VideoPoster";
 import Notes from "./components/Notes";
+import Unsplash from "./components/Unsplash";
 
 class App extends Component {
   state = { posts: [] };
   componentDidMount() {
-    fetchGhost().then(d => this.setState({ posts: d }));
+    //fetchGhost().then(d => this.setState({ posts: d }));
   }
   render() {
     return (
@@ -24,15 +25,8 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        {/* <FetchGhost theme="gallery" limit={10} /> */}
-        {/* <DynamicCursor /> */}
-        {/* <Editable /> */}
-        {/* <MobileDevice /> */}
-        {/* <SimplexTubes /> */}
-        {/* <Comment /> */}
-        {/* <SimpleFetch /> */}
-        {/* <ObjectDetectionPoster /> */}
-        <Notes />
+        <Unsplash search="dog" />
+        <VisualTest />
       </div>
     );
   }

@@ -12,6 +12,8 @@ const Canvas = ({
   clear = false,
   initialData,
   onData,
+  onBegin,
+  onEnd,
   ...rest
 }) => {
   const sigRef = useRef();
@@ -43,6 +45,8 @@ const Canvas = ({
         className: className,
         ...rest
       }}
+      onBegin={onBegin}
+      onEnd={onEnd}
     />
   );
 };

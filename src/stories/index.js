@@ -16,6 +16,7 @@ import Table from "../components/Table";
 import Comment from "../components/CommentBox";
 import Particles from "../components/Animations/Particles";
 import SimplexTubes from "../components/Animations/SimplexTubes";
+import PseudoAnim from "../components/Animations/PseudoAnimation";
 import Fetch, {
   FetchWithoutReducer,
   SimpleFetch
@@ -28,6 +29,8 @@ import {
   BrightnessDataCollector
 } from "../components/Tensorflow";
 import Notes from "../components/Notes";
+
+import VisualTest from "../components/VisualTesting";
 
 import Basic from "../components/basic";
 import BasicHooks from "../components/basichooks";
@@ -121,3 +124,9 @@ storiesOf("ML - Tensorflow", module)
   .add("Brightness Trainer", () => <BrightnessTrainer />);
 
 storiesOf("Custom Notepad", module).add("basic", () => <Notes />);
+
+storiesOf("Pseudo Animated Image", module).add("mouse position", () => (
+  <PseudoAnim />
+));
+
+storiesOf("cross browser testing", module).add("visual", () => <VisualTest />);
